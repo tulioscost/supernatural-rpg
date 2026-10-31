@@ -1,7 +1,7 @@
 <section class="spn-body spn-item-body">
-  <header class="spn-topbar"><div class="spn-mark"><img src="systems/supernatural-cacadores/assets/insignia.svg" alt="" /></div>
-    <div class="spn-identity"><div class="spn-overline">CATÁLOGO DE ARQUIVO / {{item.type}}</div><input class="spn-name" name="name" value="{{item.name}}" /></div>
-    <figure class="spn-portrait"><img src="{{item.img}}" alt="" /></figure></header>
+  <header class="spn-topbar spn-paper-clip"><div class="spn-mark"><img src="systems/supernatural-cacadores/assets/insignia.svg" alt="" /></div>
+    <div class="spn-identity"><div class="spn-overline">ANEXO DO DIÁRIO / {{item.type}}</div><input class="spn-name" name="name" value="{{item.name}}" /></div>
+    <figure class="spn-portrait"><img src="{{item.img}}" data-edit="img" alt="" /><figcaption>ANEXO VISUAL</figcaption></figure></header>
   <div class="spn-panel spn-lore">
     <label>Imagem <input name="img" value="{{item.img}}" /></label>
     <label>Descrição <textarea rows="4" name="system.description">{{s.description}}</textarea></label>
@@ -27,5 +27,5 @@
     <label>Perícia <select name="system.skill">{{#each skills}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label></div>
     <label>Dificuldade <input type="number" name="system.difficulty" min="1" max="5" value="{{s.difficulty}}" /></label>
   </div>
-  <footer class="spn-bottom">NÃO OFICIAL • SEM VÍNCULO COM A SÉRIE</footer>
+  <footer class="spn-bottom">ANEXO NÃO OFICIAL • ARQUIVO DE CAMPO</footer>
 </section>

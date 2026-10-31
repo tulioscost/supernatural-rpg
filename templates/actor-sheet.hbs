@@ -1,19 +1,24 @@
-<section class="spn-body">
-  <header class="spn-topbar">
+<section class="spn-body {{#if isMonster}}spn-creature-sheet{{/if}}">
+  <header class="spn-topbar spn-paper-clip">
     <div class="spn-mark"><img src="systems/supernatural-cacadores/assets/insignia.svg" alt="Símbolo original de caçadores" /></div>
     <div class="spn-identity">
-      <div class="spn-overline">ARQUIVO DE CAÇADA <span>• REGISTRO CONFIDENCIAL</span></div>
+      <div class="spn-overline">DIÁRIO DE CAMPO <span>• CADERNO DE ANOTAÇÕES SOBRENATURAIS</span></div>
       <input class="spn-name" name="name" value="{{actor.name}}" aria-label="Nome do personagem" />
       <div class="spn-smallline">
         {{#if isHunter}}
-        <select name="system.identity.archetype" aria-label="Arquétipo">
-          {{#each archetypes}}<option value="{{name}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
-        </select>
+        <label class="spn-inline-label">Perfil
+          <select name="system.identity.archetype" aria-label="Arquétipo">
+            {{#each archetypes}}<option value="{{name}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+          </select>
+        </label>
         {{else}}<span>ENTIDADE / AMEAÇA SOBRENATURAL</span>{{/if}}
-        <span class="spn-mini">V14 · edição 0.1.0</span>
+        <span class="spn-mini">V14 · edição 0.2.0</span>
       </div>
     </div>
-    <figure class="spn-portrait"><img src="{{actor.img}}" alt="Retrato de {{actor.name}}" /></figure>
+    <figure class="spn-portrait spn-portrait-large">
+      <img src="{{actor.img}}" alt="Retrato de {{actor.name}}" data-edit="img" />
+      <figcaption>FOTO / IMAGEM • 256 × 256</figcaption>
+    </figure>
   </header>
 
   <div class="spn-status">
@@ -31,7 +36,12 @@
 
   <div class="spn-main">
     <aside class="spn-left">
-      <div class="spn-panel"><h3>ATRIBUTOS <span>clicar para testar perícia</span></h3>
+      <div class="spn-panel spn-short spn-sticky-note">
+        <h3>ROSTO NO ARQUIVO</h3>
+        <input class="spn-filepath" name="img" value="{{actor.img}}" aria-label="Caminho da imagem do retrato" placeholder="Caminho da imagem" />
+        <p class="spn-hint">Clique na foto acima para trocar a imagem.</p>
+      </div>
+      <div class="spn-panel"><h3>ATRIBUTOS <span>registro base do caçador</span></h3>
         {{#each attr}}<label class="spn-attribute"><span>{{label}}</span><input name="system.attributes.{{key}}" type="number" min="0" max="10" value="{{value}}" /></label>{{/each}}
       </div>
       <div class="spn-panel spn-short"><h3>MODIFICADORES</h3>
@@ -45,7 +55,6 @@
       {{#if a.pulse.value}}
       <div class="spn-panel spn-short"><h3>COLAPSO</h3><button type="button" class="spn-secondary" data-action="crisis">TESTAR CRISE (180+ BPM)</button></div>
       {{/if}}
-      <div class="spn-panel spn-short"><h3>ROSTO NO ARQUIVO</h3><input class="spn-filepath" name="img" value="{{actor.img}}" aria-label="Caminho da imagem do retrato" placeholder="Caminho da imagem" /></div>
     </aside>
 
     <div class="spn-right">
@@ -115,5 +124,5 @@
       {{/if}}
     </div>
   </div>
-  <footer class="spn-bottom">A ESTRADA NÃO TEM FIM <span>— SISTEMA NÃO OFICIAL • REGRAS EM PLAYTEST —</span></footer>
+  <footer class="spn-bottom">A ESTRADA NÃO TEM FIM <span>— CADERNO NÃO OFICIAL • REGRAS EM PLAYTEST —</span></footer>
 </section>

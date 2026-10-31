@@ -6,7 +6,7 @@ const {ActorSheetV2,ItemSheetV2} = foundry.applications.sheets;
 
 export class HunterSheet extends H(ActorSheetV2) {
   static DEFAULT_OPTIONS = {
-    classes: ["spn-sheet"], position: {width: 920,height: 770},
+    classes: ["spn-sheet"], position: {width: 1180,height: 900},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {
       tab: HunterSheet._tab, roll: HunterSheet._roll, customRoll: HunterSheet._customRoll,
@@ -90,7 +90,7 @@ export class HunterSheet extends H(ActorSheetV2) {
 }
 
 export class HunterItemSheet extends H(ItemSheetV2) {
-  static DEFAULT_OPTIONS={classes:["spn-sheet","spn-item-sheet"],position:{width:640,height:680},form:{submitOnChange:true,closeOnSubmit:false}};
+  static DEFAULT_OPTIONS={classes:["spn-sheet","spn-item-sheet"],position:{width:760,height:820},form:{submitOnChange:true,closeOnSubmit:false}};
   static PARTS={body:{template:`systems/${SYS_ID}/templates/item-sheet.hbs`}};
   async _prepareContext(options) {
     const ctx=await super._prepareContext(options);

@@ -2,7 +2,7 @@
   "id": "supernatural-cacadores",
   "title": "Supernatural — Caçadores da Estrada (não oficial)",
   "description": "Sistema independente de RPG de horror investigativo e caça sobrenatural, inspirado na série Supernatural. Projeto gratuito, feito por fãs, sem vínculo com os titulares da obra. Sem imagens, falas ou trilhas oficiais.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "compatibility": {
     "minimum": "14",
     "verified": "14",
@@ -49,7 +49,7 @@
   "socket": false,
   "url": "https://github.com/tulioscost/supernatural-rpg",
   "manifest": "https://github.com/tulioscost/supernatural-rpg/releases/latest/download/system.json",
-  "download": "https://github.com/tulioscost/supernatural-rpg/releases/download/v0.1.0/supernatural-cacadores.zip",
+  "download": "https://github.com/tulioscost/supernatural-rpg/releases/download/v0.2.0/supernatural-cacadores.zip",
   "bugs": "https://github.com/tulioscost/supernatural-rpg/issues",
   "changelog": "https://github.com/tulioscost/supernatural-rpg/blob/main/docs/CHANGELOG.md"
 }

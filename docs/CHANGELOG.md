@@ -1,3 +1,10 @@
+## v0.2.0
+
+- Nova ficha em tema de diário de campo/caderno de anotações.
+- Retrato principal padronizado em moldura visual 256×256.
+- Chat de rolagens com estética de página rasgada e anotações de caso.
+- Tipografias personalizadas incorporadas ao sistema.
+
 # Histórico de versões
 
 ## 0.1.0 — Protótipo inicial (31/10/2026)
