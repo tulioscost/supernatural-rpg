@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="360" viewBox="0 0 1280 360">
+<defs><linearGradient id="sky" x2="0" y2="1"><stop stop-color="#111b1d"/><stop offset="1" stop-color="#403129"/></linearGradient><linearGradient id="road" x2="0" y2="1"><stop stop-color="#111615"/><stop offset="1" stop-color="#1d1e1d"/></linearGradient></defs>
+<rect width="1280" height="360" fill="url(#sky)"/><path d="M0 275 L450 265 L560 190 L720 190 L840 265 L1280 275 L1280 360 L0 360Z" fill="url(#road)"/>
+<path d="M640 189 L640 360" stroke="#bc9669" stroke-width="5" stroke-dasharray="34 20"/>
+<text x="70" y="125" font-size="28" letter-spacing="13" fill="#bb9b71" font-family="serif">ARQUIVO DE CAÇADA</text>
+<text x="66" y="197" font-size="68" letter-spacing="4" fill="#e7d3b3" font-family="Georgia,serif" font-weight="bold">CAÇADORES DA ESTRADA</text>
+<text x="71" y="229" font-size="18" letter-spacing="5" fill="#ad8571" font-family="sans-serif">HORROR • INVESTIGAÇÃO • FAMÍLIA • SACRIFÍCIO</text>
+</svg>

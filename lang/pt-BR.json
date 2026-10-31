@@ -1,0 +1,4 @@
+{
+ "TYPES": {"Actor":{"hunter":"Caçador / Investigador","creature":"Criatura / NPC"},"Item":{"weapon":"Arma","equipment":"Equipamento","ritual":"Ritual","talent":"Talento","clue":"Pista"}},
+ "SPN":{"Name":"Nome","Test":"Teste","Health":"Vida","Pulse":"BPM","Skills":"Perícias","Inventory":"Arsenal","Lore":"Dossiê","Creature":"Criatura"}
+}

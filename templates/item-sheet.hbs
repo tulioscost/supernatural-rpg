@@ -1,0 +1,31 @@
+<section class="spn-body spn-item-body">
+  <header class="spn-topbar"><div class="spn-mark"><img src="systems/supernatural-cacadores/assets/insignia.svg" alt="" /></div>
+    <div class="spn-identity"><div class="spn-overline">CATÁLOGO DE ARQUIVO / {{item.type}}</div><input class="spn-name" name="name" value="{{item.name}}" /></div>
+    <figure class="spn-portrait"><img src="{{item.img}}" alt="" /></figure></header>
+  <div class="spn-panel spn-lore">
+    <label>Imagem <input name="img" value="{{item.img}}" /></label>
+    <label>Descrição <textarea rows="4" name="system.description">{{s.description}}</textarea></label>
+    <label>Efeito / observações <textarea rows="3" name="system.effect">{{s.effect}}</textarea></label>
+    <div class="spn-two"><label>Quantidade <input name="system.quantity" type="number" min="0" value="{{s.quantity}}" /></label>
+      <label>Carga <input name="system.load" type="number" min="0" value="{{s.load}}" /></label></div>
+    <label>Tags (separar por vírgula: ferro, prata, sal...) <input name="system.tags" value="{{s.tags}}" /></label>
+    {{#if isEquipment}}
+      <div class="spn-two"><label>RD (armadura) <input name="system.armor" type="number" value="{{s.armor}}" /></label>
+        <label>Durabilidade % <input name="system.durability" type="number" min="0" max="100" value="{{s.durability}}" /></label></div>
+      <label class="spn-check"><input name="system.equipped" type="checkbox" {{#if s.equipped}}checked{{/if}} /> Vestido/equipado</label>
+      <label class="spn-check"><input name="system.consumable" type="checkbox" {{#if s.consumable}}checked{{/if}} /> Consome 1 unidade ao usar</label>
+    {{/if}}
+    {{#if isWeapon}}<div class="spn-two"><label>Dano fixo <input name="system.damage" type="number" min="0" value="{{s.damage}}" /></label>
+      <label>Bônus na reserva <input name="system.bonus" type="number" value="{{s.bonus}}" /></label></div>
+      <label class="spn-check"><input name="system.usesAmmo" type="checkbox" {{#if s.usesAmmo}}checked{{/if}} /> Exige munição</label>
+      <label>Munição atual <input name="system.ammo" type="number" min="0" value="{{s.ammo}}" /></label>
+    {{/if}}
+    {{#if isRitual}}<label>Componentes por tentativa <input name="system.cost" type="number" min="0" value="{{s.cost}}" /></label>{{/if}}
+    {{#if isWeapon}}{{else}}{{#if isRitual}}{{else}}<p class="spn-smallnote">Este item não exige rolagem automática.</p>{{/if}}{{/if}}
+    {{#if isWeapon}}<h3>TESTE PARA USAR</h3>{{/if}}{{#if isRitual}}<h3>TESTE PARA EXECUTAR</h3>{{/if}}
+    <div class="spn-two"><label>Atributo <select name="system.attribute">{{#each attributes}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label>
+    <label>Perícia <select name="system.skill">{{#each skills}}<option value="{{key}}" {{#if selected}}selected{{/if}}>{{label}}</option>{{/each}}</select></label></div>
+    <label>Dificuldade <input type="number" name="system.difficulty" min="1" max="5" value="{{s.difficulty}}" /></label>
+  </div>
+  <footer class="spn-bottom">NÃO OFICIAL • SEM VÍNCULO COM A SÉRIE</footer>
+</section>

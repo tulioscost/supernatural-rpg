@@ -1,0 +1,1454 @@
+{
+  "items": [
+    {
+      "name": "Pistola 9 mm",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Arma de fogo comum; barulho atrai atenção.",
+        "attribute": "agi",
+        "skill": "pontaria",
+        "damage": 2,
+        "usesAmmo": true,
+        "ammo": 12,
+        "tags": "chumbo",
+        "load": 1
+      }
+    },
+    {
+      "name": "Escopeta de sal grosso",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Desestabiliza aparições por uma cena; não destrói a âncora espiritual.",
+        "attribute": "agi",
+        "skill": "pontaria",
+        "damage": 2,
+        "usesAmmo": true,
+        "ammo": 6,
+        "tags": "sal",
+        "load": 2
+      }
+    },
+    {
+      "name": "Pé de cabra de ferro",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Ferramenta de arrombamento e proteção improvisada contra espíritos.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 2,
+        "tags": "ferro",
+        "load": 1
+      }
+    },
+    {
+      "name": "Faca de prata",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Lâmina artesanal. Sua eficácia depende da criatura.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 2,
+        "tags": "prata",
+        "load": 1
+      }
+    },
+    {
+      "name": "Facão de caça",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Arma de contato; pode ser usado em decapitações mediante circunstâncias.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 2,
+        "tags": "lamina, decapitacao",
+        "load": 1
+      }
+    },
+    {
+      "name": "Tocha improvisada",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Fogo perigoso para todos, inclusive aliados; requer combustível.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 2,
+        "tags": "fogo",
+        "load": 1
+      }
+    },
+    {
+      "name": "Estaca de madeira",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Usada em rituais e contra entidades específicas; investigar espécie.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 2,
+        "tags": "madeira, estaca",
+        "load": 1
+      }
+    },
+    {
+      "name": "Lâmina ritual consagrada",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Arma rara. O Narrador define quais entidades podem ser afetadas.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 3,
+        "tags": "consagrada",
+        "load": 1
+      }
+    },
+    {
+      "name": "Ferro de cova",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Lâmina curta forjada com ferro antigo.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 2,
+        "tags": "ferro",
+        "load": 1
+      }
+    },
+    {
+      "name": "Lanterna de magnésio",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Clarão e fonte de luz. Não resolve todas as fraquezas.",
+        "attribute": "agi",
+        "skill": "pontaria",
+        "damage": 1,
+        "tags": "luz, fogo",
+        "load": 1
+      }
+    },
+    {
+      "name": "Faca comum",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Utilidade geral.",
+        "attribute": "for",
+        "skill": "combate",
+        "damage": 1,
+        "tags": "lamina",
+        "load": 1
+      }
+    },
+    {
+      "name": "Munição de prata (revolver)",
+      "type": "weapon",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Um disparo a cada unidade; recarga separada se for combinada com outra arma.",
+        "attribute": "agi",
+        "skill": "pontaria",
+        "damage": 2,
+        "usesAmmo": true,
+        "ammo": 6,
+        "tags": "prata",
+        "load": 1
+      }
+    },
+    {
+      "name": "Casaco reforçado",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Roupa de couro reforçada; sem propriedades mágicas.",
+        "armor": 1,
+        "equipped": true,
+        "durability": 100,
+        "load": 1
+      }
+    },
+    {
+      "name": "Colete tático",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Proteção balística; pode dificultar infiltração.",
+        "armor": 2,
+        "equipped": false,
+        "durability": 100,
+        "load": 2
+      }
+    },
+    {
+      "name": "Caderno do caçador",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Registro de vítimas, padrões, fraquezas e possíveis testemunhas.",
+        "load": 0
+      }
+    },
+    {
+      "name": "Kit de investigação",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Lanterna UV, luvas, amostras e câmera; habilita perícia em cena.",
+        "bonus": 1,
+        "load": 1
+      }
+    },
+    {
+      "name": "Kit médico",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Atendimento de campo; estabiliza sem recuperar PV instantaneamente.",
+        "bonus": 1,
+        "load": 1
+      }
+    },
+    {
+      "name": "Sal grosso (saco)",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Linhas protetoras enquanto intactas; verificar criatura.",
+        "tags": "sal",
+        "quantity": 3,
+        "load": 1,
+        "consumable": true
+      }
+    },
+    {
+      "name": "Água benta (frasco)",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Dissuade ou revela algumas entidades em determinadas condições.",
+        "tags": "agua-benta",
+        "quantity": 3,
+        "load": 0,
+        "consumable": true
+      }
+    },
+    {
+      "name": "Gravador de voz",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Permite capturar depoimentos e ruídos anômalos.",
+        "load": 0
+      }
+    },
+    {
+      "name": "Detector eletromagnético",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Detecta flutuações, mas não comprova uma presença sobrenatural sozinho.",
+        "load": 1
+      }
+    },
+    {
+      "name": "Chave de motel",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Objeto narrativo: acesso temporário a um quarto suspeito.",
+        "load": 0
+      }
+    },
+    {
+      "name": "Símbolo de proteção",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Efeito depende do rito e da integridade do desenho.",
+        "tags": "simbolo",
+        "load": 0
+      }
+    },
+    {
+      "name": "Gasolina e fósforos",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Usado apenas com vestígios identificados e segurança de todos.",
+        "tags": "fogo",
+        "load": 2,
+        "consumable": true
+      }
+    },
+    {
+      "name": "Celular pré-pago",
+      "type": "equipment",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Comunicação, pesquisas e pistas; pode ser rastreado.",
+        "load": 0
+      }
+    },
+    {
+      "name": "Exorcismo",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Expulsa um ocupante demoníaco com condições narrativas e vínculo com o receptáculo. O hospedeiro pode sofrer consequências.",
+        "attribute": "mor",
+        "skill": "ritual",
+        "difficulty": 2,
+        "cost": 1,
+        "tags": "exorcismo",
+        "effect": "Em sucesso, obrigar o demônio a sair quando os sinais e as condições da cena o permitirem. Em falha, avançar o relógio da possessão."
+      }
+    },
+    {
+      "name": "Armadilha de contenção",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Desenhar uma figura ritual completa antes da chegada da entidade.",
+        "attribute": "int",
+        "skill": "ocultismo",
+        "difficulty": 2,
+        "cost": 1,
+        "tags": "armadilha, simbolo",
+        "effect": "Contém entidades sujeitas a armadilhas até que o círculo seja danificado; poder superior pode exigir esforço adicional."
+      }
+    },
+    {
+      "name": "Círculo de sal",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Barreira simples, vulnerável a água, vento e sabotagem.",
+        "attribute": "mor",
+        "skill": "ritual",
+        "difficulty": 1,
+        "cost": 1,
+        "tags": "sal, circulo",
+        "effect": "Proteção provisória contra seres afetados por sal enquanto a linha permanecer intacta."
+      }
+    },
+    {
+      "name": "Consagração de lâmina",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Exige preparação, símbolo apropriado e entendimento da tradição da criatura.",
+        "attribute": "int",
+        "skill": "ocultismo",
+        "difficulty": 2,
+        "cost": 2,
+        "tags": "consagrada",
+        "effect": "Uma arma selecionada pode ganhar tag consagrada por uma cena, a critério do Narrador; a execução não edita automaticamente a arma."
+      }
+    },
+    {
+      "name": "Queima do vínculo",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Identifique os restos mortais ou objeto que retém o espírito.",
+        "attribute": "int",
+        "skill": "pesquisa",
+        "difficulty": 2,
+        "cost": 2,
+        "tags": "fogo-ritual",
+        "effect": "Com a âncora verdadeira localizada e destruída, o espírito pode ser definitivamente libertado."
+      }
+    },
+    {
+      "name": "Selo de passagem",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Desenho e oração para fechar passagem instável.",
+        "attribute": "von",
+        "skill": "concentracao",
+        "difficulty": 3,
+        "cost": 2,
+        "tags": "selo, portal",
+        "effect": "Interrompe uma passagem temporária, desde que o foco seja compreendido; falha desperta atenção."
+      }
+    },
+    {
+      "name": "Rastreio de assinatura",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Leitura simbólica de perturbações em um lugar.",
+        "attribute": "int",
+        "skill": "ocultismo",
+        "difficulty": 1,
+        "cost": 1,
+        "tags": "adivinhacao",
+        "effect": "Localiza vestígio ou sugere pista; jamais elimina a necessidade de investigação."
+      }
+    },
+    {
+      "name": "Purificação de objeto",
+      "type": "ritual",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Rito de isolamento, leitura e limpeza de um objeto contaminado.",
+        "attribute": "mor",
+        "skill": "ritual",
+        "difficulty": 2,
+        "cost": 1,
+        "tags": "purificacao",
+        "effect": "Remove influência fraca; fontes poderosas podem exigir localizar o criador do vínculo."
+      }
+    },
+    {
+      "name": "Instinto de Caçador",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Uma vez por cena, +1d6 para encontrar sinais de emboscada.",
+        "effect": "+1d6 em Percepção contra emboscada detectável, 1/cena."
+      }
+    },
+    {
+      "name": "Olhos de Arquivista",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Você sabe localizar um detalhe ignorado pela maioria.",
+        "effect": "Após obter uma pista, faça uma pergunta adicional pertinente ao padrão, 1/cena."
+      }
+    },
+    {
+      "name": "Sangue Frio",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Você continua agindo apesar do medo.",
+        "effect": "Uma vez por cena, reduza em 10 o BPM depois de proteger um inocente."
+      }
+    },
+    {
+      "name": "Mãos Firmes",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Atendimento de campo disciplinado.",
+        "effect": "+1d6 em Medicina quando houver kit e tempo seguro, 1/cena."
+      }
+    },
+    {
+      "name": "Fé Inabalável",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Concentração ritual e resistência à intimidação.",
+        "effect": "+1d6 em Ritual ou Coragem para sustentar uma barreira, 1/cena."
+      }
+    },
+    {
+      "name": "Motorista de Fuga",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Escapadas sob pressão.",
+        "effect": "+1d6 em Pilotagem durante uma fuga preparada, 1/cena."
+      }
+    },
+    {
+      "name": "Velhos Contatos",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Rede de fontes e favores de estrada.",
+        "effect": "Uma vez por sessão, obtenha um contato razoável, sujeito a contrapartida."
+      }
+    },
+    {
+      "name": "Ritualista Metódico",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Você confere cada traço duas vezes.",
+        "effect": "+1d6 em rituais com preparação de ao menos uma cena, 1/sessão."
+      }
+    },
+    {
+      "name": "Tecelão de Mentiras",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Sabe apresentar uma cobertura verossímil.",
+        "effect": "+1d6 em Enganação ao usar identidade plausível, 1/cena."
+      }
+    },
+    {
+      "name": "Última Chance",
+      "type": "talent",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Pague o preço e tente outra vez.",
+        "effect": "Uma vez por sessão, repita teste falho elegível; +10 BPM e uma consequência inevitável."
+      }
+    },
+    {
+      "name": "Temperatura cai 11 graus",
+      "type": "clue",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "A mudança térmica ocorreu apenas no corredor 3.",
+        "effect": "Possível presença espectral; não comprova sozinha."
+      }
+    },
+    {
+      "name": "Relatório do necrotério",
+      "type": "clue",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Marcas de um instrumento antigo no corpo; o agressor não deixou pegadas.",
+        "effect": "Buscar época e material do objeto."
+      }
+    },
+    {
+      "name": "Fita cassete sem gravação",
+      "type": "clue",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "Há um intervalo de 17 segundos em que os ruídos da sala desaparecem.",
+        "effect": "Conferir se existe rito de silêncio."
+      }
+    },
+    {
+      "name": "Anel oxidado",
+      "type": "clue",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "description": "O metal aparece em todas as fotos anteriores à tragédia.",
+        "effect": "Pode ser vínculo ou distração; investigar."
+      }
+    }
+  ],
+  "actors": [
+    {
+      "name": "Alex Braga — Caçador de Campo",
+      "type": "hunter",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 2,
+          "agi": 3,
+          "rob": 2,
+          "car": 1,
+          "mor": 1,
+          "fib": 2,
+          "int": 1,
+          "rac": 2,
+          "von": 1
+        },
+        "skills": {
+          "combate": 2,
+          "pontaria": 2,
+          "sobrevivencia": 2,
+          "pilotagem": 2
+        },
+        "health": {
+          "value": 10
+        },
+        "pulse": {
+          "value": 60
+        },
+        "identity": {
+          "background": "Vive numa caminhonete, conhece cada motel da rodovia e deve favores a uma ex-parceira."
+        },
+        "resources": {
+          "supplies": 4
+        }
+      },
+      "items": [
+        {
+          "name": "Escopeta de sal grosso",
+          "type": "weapon",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Desestabiliza aparições por uma cena; não destrói a âncora espiritual.",
+            "attribute": "agi",
+            "skill": "pontaria",
+            "damage": 2,
+            "usesAmmo": true,
+            "ammo": 6,
+            "tags": "sal",
+            "load": 2
+          }
+        },
+        {
+          "name": "Pé de cabra de ferro",
+          "type": "weapon",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Ferramenta de arrombamento e proteção improvisada contra espíritos.",
+            "attribute": "for",
+            "skill": "combate",
+            "damage": 2,
+            "tags": "ferro",
+            "load": 1
+          }
+        },
+        {
+          "name": "Casaco reforçado",
+          "type": "equipment",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Roupa de couro reforçada; sem propriedades mágicas.",
+            "armor": 1,
+            "equipped": true,
+            "durability": 100,
+            "load": 1
+          }
+        },
+        {
+          "name": "Caderno do caçador",
+          "type": "equipment",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Registro de vítimas, padrões, fraquezas e possíveis testemunhas.",
+            "load": 0
+          }
+        },
+        {
+          "name": "Instinto de Caçador",
+          "type": "talent",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Uma vez por cena, +1d6 para encontrar sinais de emboscada.",
+            "effect": "+1d6 em Percepção contra emboscada detectável, 1/cena."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Lia Furtado — Investigadora",
+      "type": "hunter",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 1,
+          "rob": 1,
+          "car": 2,
+          "mor": 1,
+          "fib": 1,
+          "int": 3,
+          "rac": 4,
+          "von": 1
+        },
+        "skills": {
+          "investigacao": 3,
+          "pesquisa": 2,
+          "percepcao": 2,
+          "engano": 1
+        },
+        "health": {
+          "value": 5
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Ex-repórter policial, conhece vítimas esquecidas e tem um contato no necrotério."
+        },
+        "resources": {
+          "supplies": 4
+        }
+      },
+      "items": [
+        {
+          "name": "Pistola 9 mm",
+          "type": "weapon",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Arma de fogo comum; barulho atrai atenção.",
+            "attribute": "agi",
+            "skill": "pontaria",
+            "damage": 2,
+            "usesAmmo": true,
+            "ammo": 12,
+            "tags": "chumbo",
+            "load": 1
+          }
+        },
+        {
+          "name": "Kit de investigação",
+          "type": "equipment",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Lanterna UV, luvas, amostras e câmera; habilita perícia em cena.",
+            "bonus": 1,
+            "load": 1
+          }
+        },
+        {
+          "name": "Kit médico",
+          "type": "equipment",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Atendimento de campo; estabiliza sem recuperar PV instantaneamente.",
+            "bonus": 1,
+            "load": 1
+          }
+        },
+        {
+          "name": "Olhos de Arquivista",
+          "type": "talent",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Você sabe localizar um detalhe ignorado pela maioria.",
+            "effect": "Após obter uma pista, faça uma pergunta adicional pertinente ao padrão, 1/cena."
+          }
+        },
+        {
+          "name": "Temperatura cai 11 graus",
+          "type": "clue",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "A mudança térmica ocorreu apenas no corredor 3.",
+            "effect": "Possível presença espectral; não comprova sozinha."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Ravi Moreira — Ocultista",
+      "type": "hunter",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 1,
+          "rob": 1,
+          "car": 1,
+          "mor": 2,
+          "fib": 2,
+          "int": 4,
+          "rac": 1,
+          "von": 2
+        },
+        "skills": {
+          "ocultismo": 3,
+          "ritual": 2,
+          "pesquisa": 2,
+          "coragem": 1
+        },
+        "health": {
+          "value": 5
+        },
+        "pulse": {
+          "value": 60
+        },
+        "identity": {
+          "background": "Arquivista de coleção particular de textos apócrifos; tenta corrigir um rito que deu errado."
+        },
+        "resources": {
+          "supplies": 4
+        }
+      },
+      "items": [
+        {
+          "name": "Exorcismo",
+          "type": "ritual",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Expulsa um ocupante demoníaco com condições narrativas e vínculo com o receptáculo. O hospedeiro pode sofrer consequências.",
+            "attribute": "mor",
+            "skill": "ritual",
+            "difficulty": 2,
+            "cost": 1,
+            "tags": "exorcismo",
+            "effect": "Em sucesso, obrigar o demônio a sair quando os sinais e as condições da cena o permitirem. Em falha, avançar o relógio da possessão."
+          }
+        },
+        {
+          "name": "Armadilha de contenção",
+          "type": "ritual",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Desenhar uma figura ritual completa antes da chegada da entidade.",
+            "attribute": "int",
+            "skill": "ocultismo",
+            "difficulty": 2,
+            "cost": 1,
+            "tags": "armadilha, simbolo",
+            "effect": "Contém entidades sujeitas a armadilhas até que o círculo seja danificado; poder superior pode exigir esforço adicional."
+          }
+        },
+        {
+          "name": "Círculo de sal",
+          "type": "ritual",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Barreira simples, vulnerável a água, vento e sabotagem.",
+            "attribute": "mor",
+            "skill": "ritual",
+            "difficulty": 1,
+            "cost": 1,
+            "tags": "sal, circulo",
+            "effect": "Proteção provisória contra seres afetados por sal enquanto a linha permanecer intacta."
+          }
+        },
+        {
+          "name": "Sal grosso (saco)",
+          "type": "equipment",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Linhas protetoras enquanto intactas; verificar criatura.",
+            "tags": "sal",
+            "quantity": 3,
+            "load": 1,
+            "consumable": true
+          }
+        },
+        {
+          "name": "Ritualista Metódico",
+          "type": "talent",
+          "img": "systems/supernatural-cacadores/assets/insignia.svg",
+          "system": {
+            "description": "Você confere cada traço duas vezes.",
+            "effect": "+1d6 em rituais com preparação de ao menos uma cena, 1/sessão."
+          }
+        }
+      ]
+    },
+    {
+      "name": "Espírito Vingativo",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 3,
+          "rob": 2,
+          "car": 1,
+          "mor": 3,
+          "fib": 1,
+          "int": 1,
+          "rac": 1,
+          "von": 1
+        },
+        "skills": {
+          "percepcao": 2,
+          "combate": 2,
+          "intimidacao": 3
+        },
+        "health": {
+          "value": 10
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Aparição vinculada a morte violenta ou segredo não resolvido."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Espírito",
+          "threat": 1,
+          "armor": 0,
+          "damage": 2,
+          "invulnerable": true,
+          "weaknessTags": "sal, ferro, fogo-ritual",
+          "weakness": "Ferro e sal podem afastar; para encerrar, localizar e destruir a âncora material ou resolver o vínculo.",
+          "countermeasure": "Queima do vínculo ou resolução documentada da injustiça.",
+          "abilities": "Atravessar paredes, fazer ruídos, manipular objetos leves.",
+          "defenses": "Não morre por dano convencional.",
+          "secret": "Alguns objetos ligados ao espírito não são os verdadeiros vínculos."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Demônio Possessor",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 3,
+          "agi": 3,
+          "rob": 3,
+          "car": 4,
+          "mor": 4,
+          "fib": 1,
+          "int": 1,
+          "rac": 1,
+          "von": 1
+        },
+        "skills": {
+          "engano": 3,
+          "combate": 3,
+          "intimidacao": 3
+        },
+        "health": {
+          "value": 15
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Entidade de olhos escurecidos instalada num hospedeiro humano."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Demônio",
+          "threat": 3,
+          "armor": 1,
+          "damage": 3,
+          "invulnerable": true,
+          "weaknessTags": "consagrada, exorcismo, agua-benta",
+          "weakness": "Água benta revela e perturba; armadilhas podem conter; exorcismo separa o hospedeiro.",
+          "countermeasure": "Ritual de exorcismo com receptáculo preservado, ou arma raríssima adequada.",
+          "abilities": "Possessão, força ampliada, blefes sobre pessoas próximas.",
+          "defenses": "Armas comuns não expulsam a entidade.",
+          "secret": "O hospedeiro pode estar consciente."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Vampiro Errante",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 3,
+          "agi": 3,
+          "rob": 3,
+          "car": 2,
+          "mor": 1,
+          "fib": 1,
+          "int": 1,
+          "rac": 1,
+          "von": 1
+        },
+        "skills": {
+          "combate": 3,
+          "furtividade": 2,
+          "rastreamento": 2
+        },
+        "health": {
+          "value": 15
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Predador noturno que mantém fachada humana."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Vampiro",
+          "threat": 2,
+          "armor": 1,
+          "damage": 3,
+          "invulnerable": true,
+          "weaknessTags": "decapitacao",
+          "weakness": "Imobilização e decapitação são método de encerramento; golpes comuns apenas atrasam.",
+          "countermeasure": "Investigar esconderijo, isolar presas e finalizar em condição segura.",
+          "abilities": "Sentidos aguçados, garras e regeneração.",
+          "defenses": "Regenera sem contramedida definitiva.",
+          "secret": "Mantém disfarce entre vizinhos."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Lobisomem da Serra",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 4,
+          "agi": 3,
+          "rob": 3,
+          "car": 1,
+          "mor": 1,
+          "fib": 1,
+          "int": 1,
+          "rac": 1,
+          "von": 1
+        },
+        "skills": {
+          "combate": 3,
+          "rastreamento": 3
+        },
+        "health": {
+          "value": 15
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Pessoa transformada quando uma compulsão predatória irrompe."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Lobisomem",
+          "threat": 2,
+          "armor": 1,
+          "damage": 3,
+          "invulnerable": true,
+          "weaknessTags": "prata",
+          "weakness": "Metal prateado preparado, mas não meramente parecido, perfura a resistência.",
+          "countermeasure": "Neutralizar com prata; investigar origem e possível inocente.",
+          "abilities": "Faro, perseguição noturna, ataques rápidos.",
+          "defenses": "Regeneração acelerada.",
+          "secret": "A pessoa pode não saber o que faz."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Metamorfo Sem Rosto",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 3,
+          "agi": 4,
+          "rob": 3,
+          "car": 4,
+          "mor": 1,
+          "fib": 1,
+          "int": 1,
+          "rac": 3,
+          "von": 1
+        },
+        "skills": {
+          "engano": 4,
+          "furtividade": 3,
+          "combate": 2
+        },
+        "health": {
+          "value": 15
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Predador capaz de copiar rostos de pessoas observadas."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Metamorfo",
+          "threat": 2,
+          "armor": 0,
+          "damage": 2,
+          "invulnerable": true,
+          "weaknessTags": "prata",
+          "weakness": "Prata é a contramedida mais confiável; provas visuais isoladas são frágeis.",
+          "countermeasure": "Expor contradição e confrontar com metal apropriado.",
+          "abilities": "Alterar rosto e voz; montar álibis falsos.",
+          "defenses": "Escapa por identidades sucessivas.",
+          "secret": "A vítima incriminada pode estar viva."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Wendigo Faminto",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 4,
+          "agi": 4,
+          "rob": 4,
+          "car": 1,
+          "mor": 1,
+          "fib": 3,
+          "int": 1,
+          "rac": 1,
+          "von": 1
+        },
+        "skills": {
+          "combate": 4,
+          "furtividade": 4,
+          "rastreamento": 4
+        },
+        "health": {
+          "value": 20
+        },
+        "pulse": {
+          "value": 55
+        },
+        "identity": {
+          "background": "Caçador de florestas que guarda despojos em cavernas remotas."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Wendigo",
+          "threat": 3,
+          "armor": 2,
+          "damage": 4,
+          "invulnerable": true,
+          "weaknessTags": "fogo",
+          "weakness": "Chamas são necessárias para sua derrota; usar fogo envolve riscos de incêndio.",
+          "countermeasure": "Afastar civis e encerrar a criatura com fonte segura de fogo.",
+          "abilities": "Camuflagem, velocidade, vozes imitadas.",
+          "defenses": "Resiste a projéteis comuns.",
+          "secret": "Mantém sobreviventes em cativeiro."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Bruxa do Pacto",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 1,
+          "rob": 1,
+          "car": 3,
+          "mor": 3,
+          "fib": 1,
+          "int": 4,
+          "rac": 4,
+          "von": 1
+        },
+        "skills": {
+          "ocultismo": 4,
+          "ritual": 4,
+          "engano": 3
+        },
+        "health": {
+          "value": 5
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Pessoa que alimenta um pacto através de ritos custosos."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Bruxa",
+          "threat": 3,
+          "armor": 0,
+          "damage": 2,
+          "invulnerable": false,
+          "weaknessTags": "purificacao, selo",
+          "weakness": "Cortar ingredientes, grimório ou foco ritual enfraquece seu alcance.",
+          "countermeasure": "Romper o pacto, destruir foco e interromper círculo ativo.",
+          "abilities": "Maldições, visão por espelhos, manipulação.",
+          "defenses": "Barreiras preparadas, intermediários.",
+          "secret": "Talvez exista uma vítima coagida nos pactos."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Djinn do Quarto Azul",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 3,
+          "rob": 3,
+          "car": 3,
+          "mor": 1,
+          "fib": 1,
+          "int": 1,
+          "rac": 1,
+          "von": 4
+        },
+        "skills": {
+          "furtividade": 3,
+          "engano": 3,
+          "combate": 2
+        },
+        "health": {
+          "value": 15
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Entidade que aprisiona vítimas em percepções de suas maiores vontades."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Djinn",
+          "threat": 3,
+          "armor": 1,
+          "damage": 2,
+          "invulnerable": true,
+          "weaknessTags": "prata",
+          "weakness": "Despertar a vítima é etapa separada da neutralização do predador.",
+          "countermeasure": "Quebrar transe e neutralizar com contramedida investigada.",
+          "abilities": "Visões pessoais, imobilização, sugestão.",
+          "defenses": "Ficções convincentes atraem o grupo.",
+          "secret": "A vítima pode escolher ficar na ilusão."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Ceifador Silencioso",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 1,
+          "rob": 1,
+          "car": 1,
+          "mor": 5,
+          "fib": 1,
+          "int": 1,
+          "rac": 4,
+          "von": 5
+        },
+        "skills": {
+          "concentracao": 4,
+          "percepcao": 4
+        },
+        "health": {
+          "value": 5
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Entidade liminar associada a mortes e passagens."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Ceifador",
+          "threat": 4,
+          "armor": 3,
+          "damage": 4,
+          "invulnerable": true,
+          "weaknessTags": "selo, portal",
+          "weakness": "Interferir em sua função acarreta preço narrativo; não há solução de combate comum.",
+          "countermeasure": "Negociar desfecho ou fechar a passagem anômala.",
+          "abilities": "Véu entre mundos, aparecer junto à morte.",
+          "defenses": "Não interage como criatura comum.",
+          "secret": "Pode cumprir equilíbrio e não agir com malícia."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Mensageiro Celestial",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 4,
+          "agi": 4,
+          "rob": 5,
+          "car": 1,
+          "mor": 5,
+          "fib": 1,
+          "int": 1,
+          "rac": 1,
+          "von": 5
+        },
+        "skills": {
+          "combate": 4,
+          "concentracao": 4,
+          "intimidacao": 4
+        },
+        "health": {
+          "value": 25
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Ser de outra ordem que utiliza um receptáculo humano."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Anjo",
+          "threat": 5,
+          "armor": 3,
+          "damage": 5,
+          "invulnerable": true,
+          "weaknessTags": "consagrada, selo",
+          "weakness": "Não é derrotável por meios humanos ordinários; símbolos podem impor limites circunstanciais.",
+          "countermeasure": "Negociação, selamento ou artefato raro narrativamente adquirido.",
+          "abilities": "Poder incompreensível, cura seletiva, presença esmagadora.",
+          "defenses": "Dano comum irrelevante.",
+          "secret": "Seu objetivo não precisa coincidir com o de humanos."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Espírito da Ponte",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 3,
+          "rob": 2,
+          "car": 1,
+          "mor": 3,
+          "fib": 1,
+          "int": 1,
+          "rac": 1,
+          "von": 1
+        },
+        "skills": {
+          "intimidacao": 2,
+          "combate": 2
+        },
+        "health": {
+          "value": 10
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Manifestação contida em área antiga de acidente rodoviário."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Espírito",
+          "threat": 1,
+          "armor": 0,
+          "damage": 2,
+          "invulnerable": true,
+          "weaknessTags": "sal, ferro, fogo-ritual",
+          "weakness": "A âncora é um relógio de bolso desaparecido na enchente.",
+          "countermeasure": "Recuperar relógio no bueiro e encerrar o vínculo com ritual seguro.",
+          "abilities": "Névoa e projeções de faróis.",
+          "defenses": "Dissipa sem ser eliminada.",
+          "secret": "A suposta vítima estava ajudando a salvar alguém na noite do acidente."
+        }
+      },
+      "items": []
+    },
+    {
+      "name": "Eco Parasita",
+      "type": "creature",
+      "img": "systems/supernatural-cacadores/assets/insignia.svg",
+      "system": {
+        "attributes": {
+          "for": 1,
+          "agi": 2,
+          "rob": 2,
+          "car": 1,
+          "mor": 1,
+          "fib": 1,
+          "int": 1,
+          "rac": 4,
+          "von": 4
+        },
+        "skills": {
+          "engano": 3,
+          "investigacao": 2
+        },
+        "health": {
+          "value": 10
+        },
+        "pulse": {
+          "value": 65
+        },
+        "identity": {
+          "background": "Imita vozes de falecidos através de um rádio antigo."
+        },
+        "resources": {
+          "supplies": 4
+        },
+        "creature": {
+          "family": "Assombração",
+          "threat": 2,
+          "armor": 0,
+          "damage": 1,
+          "invulnerable": true,
+          "weaknessTags": "purificacao, fogo-ritual",
+          "weakness": "É ligado à bobina de rádio enterrada no depósito.",
+          "countermeasure": "Quebrar o círculo de gravação e purificar o aparelho.",
+          "abilities": "Vozes familiares, manipulação de lembranças.",
+          "defenses": "Evita confrontos diretos.",
+          "secret": "Não é o espírito do locutor original."
+        }
+      },
+      "items": []
+    }
+  ],
+  "journals": [
+    {
+      "name": "01 — Regras rápidas",
+      "pages": [
+        {
+          "name": "Testes e combate",
+          "html": "<h1>Regras rápidas</h1><p><strong>Reserva:</strong> Atributo + perícia + modificadores; 0–10d6. Cada 5–6 é sucesso. O 6 gera 1 Ímpeto utilizável apenas se o teste passar. Dificuldades 1–3 usuais, 4–5 excepcionais.</p><p><strong>Ferimento:</strong> PV = ROB × 5; dano fixo menos maior RD aplicável; metade da vida −1d6 em esforços físicos exigentes; em 0 PV a criatura ou personagem fica incapaz.</p><p><strong>Ritual:</strong> consome componentes na tentativa; a execução rola atributo e perícia especificados. Barreira quebrada perde efeito.</p><p><strong>Pista:</strong> não desaparece por uma falha isolada; a falha cria custo, risco ou avanço de relógio.</p><p><strong>Monstros:</strong> em entidades com imunidade, o dano só se torna efetivo se a arma compartilhar uma tag com a fraqueza. A derrota definitiva também exige contramedida narrativa.</p>"
+        }
+      ]
+    },
+    {
+      "name": "02 — Aventura: O Último Trecho",
+      "pages": [
+        {
+          "name": "Premissa",
+          "html": "<h1>O Último Trecho</h1><p><strong>Duração:</strong> 1 sessão de 3–4 horas. <strong>Cenário:</strong> Condado fictício de São Jerônimo, estrada BR-147 fictícia.</p><p>Três acidentes idênticos ocorrem num trecho de ponte fechada. Um automóvel, sem motorista visível, aparece sempre às 02h17. Os mortos têm os dedos cobertos de ferrugem.</p><h2>Ato 1 — Os vivos</h2><p>Entrevistar a frentista, verificar laudo do necrotério e examinar as câmeras. A frentista descreve um relógio de bolso; um relatório antigo fala da ponte inundada.</p><h2>Ato 2 — A estrada</h2><p>Na ponte, uma névoa apaga as lanternas. Teste RAC + Investigação D2 oferece detalhe adicional; em falha a pista do relógio aparece mesmo assim, mas o relógio de ameaça avança. Usar ferro ou sal afastará a aparição por pouco tempo.</p><h2>Ato 3 — O vínculo</h2><p>O relógio de bolso foi levado pela enchente a um bueiro a 80 metros. Há dois caminhos: recuperar o objeto com esforço e água crescente ou persuadir testemunha a revelar a lembrança da última noite. O rito de queima do vínculo encerra a assombração; a vítima original não era culpada.</p>"
+        },
+        {
+          "name": "Personagens e pistas",
+          "html": "<h1>Elenco</h1><p><strong>Carla Diniz, frentista:</strong> quer esconder que viu o carro às 02h17. Não é culpada.</p><p><strong>Dr. Elias Teodoro, médico-legista:</strong> descreve pó de ferro nos dedos, registra que o corpo não esteve debaixo d’água.</p><p><strong>Ana Paes, antiga testemunha:</strong> viu a vítima salvar uma criança antes de morrer. Tem medo de revelar a verdade.</p><h2>Pistas essenciais</h2><ol><li>Relógio na gravação</li><li>Nome do proprietário em recorte de jornal</li><li>Água desce para bueiro</li><li>Ritual requer destruir a âncora correta</li></ol><h2>Relógio de ameaça (4 partes)</h2><ol><li>Rádio falha</li><li>Corredores ficam gelados</li><li>Carro persegue inocente</li><li>Uma vítima desaparece — ainda pode ser resgatada</li></ol>"
+        }
+      ]
+    },
+    {
+      "name": "03 — Guia do Narrador",
+      "pages": [
+        {
+          "name": "Ritmo investigativo",
+          "html": "<h1>Condução</h1><p>A criatura precisa deixar sinais perceptíveis antes do combate. Apresente 3 pistas independentes para conclusões indispensáveis. Permita que o grupo escolha entre negociar, investigar, proteger e atacar.</p><p><strong>Regra de ouro:</strong> nunca esconda a única pista para progredir atrás de um único teste. Na falha, entregue a informação indispensável e adicione custo.</p><p><strong>BPM:</strong> +5 presságio, +10 cadáver/isolamento, +20 ataque/ferimento, +25 revelação devastadora. Cinco minutos seguros e apoio −10; uma hora protegida −20.</p><p><strong>Finais:</strong> civis salvos, segredo revelado e inimigo expulso são objetivos distintos; nem todos podem ser alcançados sem sacrifício.</p>"
+        }
+      ]
+    },
+    {
+      "name": "04 — Aviso e créditos",
+      "pages": [
+        {
+          "name": "Sobre este projeto",
+          "html": "<h1>Projeto não oficial</h1><p>Caçadores da Estrada é uma adaptação experimental de fã para jogos privados. Supernatural e quaisquer personagens oficiais são de seus respectivos titulares. Este pacote não reproduz logotipos, músicas, fotografias ou falas da produção.</p><p>As regras de reserva de d6, Ímpetos, PV e BPM foram adaptadas de documento mecânico enviado pelo solicitante, intitulado CLANDESTINO — Manual de Regras Mecânicas 5.2.2. Monstros e objetos foram escritos em termos próprios a partir de tropos do gênero e convenções da série.</p><p>Conteúdo não validado em execução real do Foundry. Verifique o README e teste num mundo novo antes de usá-lo em campanha principal.</p>"
+        }
+      ]
+    }
+  ]
+}

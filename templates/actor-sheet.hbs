@@ -1,0 +1,119 @@
+<section class="spn-body">
+  <header class="spn-topbar">
+    <div class="spn-mark"><img src="systems/supernatural-cacadores/assets/insignia.svg" alt="Símbolo original de caçadores" /></div>
+    <div class="spn-identity">
+      <div class="spn-overline">ARQUIVO DE CAÇADA <span>• REGISTRO CONFIDENCIAL</span></div>
+      <input class="spn-name" name="name" value="{{actor.name}}" aria-label="Nome do personagem" />
+      <div class="spn-smallline">
+        {{#if isHunter}}
+        <select name="system.identity.archetype" aria-label="Arquétipo">
+          {{#each archetypes}}<option value="{{name}}" {{#if selected}}selected{{/if}}>{{name}}</option>{{/each}}
+        </select>
+        {{else}}<span>ENTIDADE / AMEAÇA SOBRENATURAL</span>{{/if}}
+        <span class="spn-mini">V14 · edição 0.1.0</span>
+      </div>
+    </div>
+    <figure class="spn-portrait"><img src="{{actor.img}}" alt="Retrato de {{actor.name}}" /></figure>
+  </header>
+
+  <div class="spn-status">
+    <div class="spn-meter"><label>VIDA</label><div><button type="button" data-action="adjustHealth" data-delta="-1">−</button>
+      <input name="system.health.value" type="number" min="0" max="{{a.health.max}}" value="{{a.health.value}}" /><span>/ {{a.health.max}}</span>
+      <button type="button" data-action="adjustHealth" data-delta="1">+</button></div></div>
+    <div class="spn-meter"><label>TENSÃO / BPM</label><div><button type="button" data-action="adjustPulse" data-delta="-10">−10</button>
+      <input name="system.pulse.value" type="number" min="0" max="300" value="{{a.pulse.value}}" />
+      <button type="button" data-action="adjustPulse" data-delta="10">+10</button></div></div>
+    <div class="spn-meter"><label>REDUÇÃO DE DANO</label><strong>{{a.protection}}</strong></div>
+    <div class="spn-meter"><label>COMPONENTES</label><input name="system.resources.supplies" type="number" value="{{a.resources.supplies}}" min="0" /></div>
+    <div class="spn-meter"><label>TRAUMAS</label><input name="system.resources.trauma" type="number" value="{{a.resources.trauma}}" min="0" /></div>
+    <div class="spn-meter"><label>MARCOS</label><input name="system.resources.marks" type="number" value="{{a.resources.marks}}" min="0" /></div>
+  </div>
+
+  <div class="spn-main">
+    <aside class="spn-left">
+      <div class="spn-panel"><h3>ATRIBUTOS <span>clicar para testar perícia</span></h3>
+        {{#each attr}}<label class="spn-attribute"><span>{{label}}</span><input name="system.attributes.{{key}}" type="number" min="0" max="10" value="{{value}}" /></label>{{/each}}
+      </div>
+      <div class="spn-panel spn-short"><h3>MODIFICADORES</h3>
+        <label class="spn-smallfield">Temporário <input type="number" name="system.modifiers.temporary" value="{{a.modifiers.temporary}}" /></label>
+        <label class="spn-smallfield">Dificuldade <select name="system.modifiers.difficulty">
+          {{#each difficultyChoices}}<option value="{{n}}" {{#if selected}}selected{{/if}}>D{{n}}</option>{{/each}}
+        </select></label>
+        <label class="spn-check"><input type="checkbox" name="system.modifiers.underPressure" {{#if a.modifiers.underPressure}}checked{{/if}} /> Testes sob pressão (BPM)</label>
+        <label class="spn-smallfield">Condições <input name="system.conditions" value="{{a.conditions}}" placeholder="exausto, ferido..." /></label>
+      </div>
+      {{#if a.pulse.value}}
+      <div class="spn-panel spn-short"><h3>COLAPSO</h3><button type="button" class="spn-secondary" data-action="crisis">TESTAR CRISE (180+ BPM)</button></div>
+      {{/if}}
+      <div class="spn-panel spn-short"><h3>ROSTO NO ARQUIVO</h3><input class="spn-filepath" name="img" value="{{actor.img}}" aria-label="Caminho da imagem do retrato" placeholder="Caminho da imagem" /></div>
+    </aside>
+
+    <div class="spn-right">
+      <nav class="spn-tabs">
+        {{#each tabs}}<button type="button" data-action="tab" data-tab="{{id}}" class="{{#if active}}active{{/if}}">{{label}}</button>{{/each}}
+      </nav>
+      {{#if isSkills}}
+      <div class="spn-panel"><h3>TESTES DE CAMPO <span>5–6 = sucesso; 6 = ímpeto</span></h3>
+        <div class="spn-skills">
+          {{#each skills}}
+          <div class="spn-skill"><button type="button" data-action="roll" data-attr="{{attribute}}" data-skill="{{key}}" data-label="{{label}}" title="Rolar {{label}}"><i class="fa-solid fa-dice-d6"></i></button>
+            <div class="spn-skill-name"><strong>{{label}}</strong><small>{{attributeLabel}}</small></div>
+            <input type="number" min="0" max="10" name="system.skills.{{key}}" value="{{level}}" aria-label="Graduação em {{label}}" /></div>
+          {{/each}}
+        </div>
+      </div>
+      <div class="spn-panel"><h3>RESOLUÇÃO LIVRE</h3>
+        <div class="spn-roller">
+          <select data-roll-attr aria-label="Atributo">{{#each attr}}<option value="{{key}}">{{label}}</option>{{/each}}</select>
+          <select data-roll-skill aria-label="Perícia">{{#each skills}}<option value="{{key}}">{{label}}</option>{{/each}}</select>
+          <select data-roll-difficulty aria-label="Dificuldade"><option value="1">D1</option><option value="2">D2</option><option value="3">D3</option><option value="4">D4</option><option value="5">D5</option></select>
+          <button type="button" class="spn-accent" data-action="customRoll"><i class="fa-solid fa-dice"></i> ROLAR</button>
+        </div>
+        <button type="button" data-action="clueRoll" class="spn-secondary"><i class="fa-solid fa-magnifying-glass"></i> INVESTIGAR (pista essencial mesmo na falha)</button>
+      </div>
+      {{/if}}
+      {{#if isInventory}}
+      <div class="spn-panel"><h3>ARMAS <button type="button" data-action="addItem" data-type="weapon">+ Nova arma</button></h3>
+        {{#each itemGroups.weapon}}<div class="spn-item-row" data-item-id="{{id}}"><img src="{{img}}" alt="" /><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="useItem" title="Atacar">ATACAR</button><button type="button" data-action="editItem" title="Editar">✎</button><button type="button" data-action="deleteItem" title="Excluir">×</button></div>{{else}}<p class="spn-empty">Sem armas. Arraste um item para a ficha ou crie uma.</p>{{/each}}
+      </div>
+      <div class="spn-panel"><h3>EQUIPAMENTOS <button type="button" data-action="addItem" data-type="equipment">+ Novo equipamento</button></h3>
+        {{#each itemGroups.equipment}}<div class="spn-item-row" data-item-id="{{id}}"><img src="{{img}}" alt="" /><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="toggleEquip" title="Vestir / retirar">{{#if equipped}}VESTIDO{{else}}VESTIR{{/if}}</button><button type="button" data-action="useItem">USAR</button><button type="button" data-action="editItem">✎</button><button type="button" data-action="deleteItem">×</button></div>{{else}}<p class="spn-empty">Inventário vazio.</p>{{/each}}
+      </div>
+      <div class="spn-panel"><h3>RITUAIS <button type="button" data-action="addItem" data-type="ritual">+ Novo ritual</button></h3>
+        {{#each itemGroups.ritual}}<div class="spn-item-row" data-item-id="{{id}}"><img src="{{img}}" alt="" /><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="useItem">EXECUTAR</button><button type="button" data-action="editItem">✎</button><button type="button" data-action="deleteItem">×</button></div>{{else}}<p class="spn-empty">Nenhum ritual preparado.</p>{{/each}}
+      </div>
+      <p class="spn-footer">Carga transportada: {{totalLoad}} · Componentes e munições são consumidos por ações próprias.</p>
+      {{/if}}
+      {{#if isLore}}
+      <div class="spn-panel spn-lore"><h3>HISTÓRICO E VÍNCULOS</h3>
+        <label>Origem / passado <textarea name="system.identity.background" rows="4">{{a.identity.background}}</textarea></label>
+        <label>Pessoas importantes <textarea name="system.identity.bonds" rows="3">{{a.identity.bonds}}</textarea></label>
+        <label>Investigação atual <textarea name="system.identity.currentCase" rows="3">{{a.identity.currentCase}}</textarea></label>
+        <label>Notas particulares <textarea name="system.identity.notes" rows="4">{{a.identity.notes}}</textarea></label>
+      </div>
+      <div class="spn-panel"><h3>TALENTOS <button type="button" data-action="addItem" data-type="talent">+ Talento</button></h3>
+      {{#each itemGroups.talent}}<div class="spn-item-row" data-item-id="{{id}}"><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="editItem">✎</button><button type="button" data-action="deleteItem">×</button></div>{{/each}}
+      </div>
+      <div class="spn-panel"><h3>PISTAS <button type="button" data-action="addItem" data-type="clue">+ Pista</button></h3>
+      {{#each itemGroups.clue}}<div class="spn-item-row" data-item-id="{{id}}"><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="editItem">✎</button><button type="button" data-action="deleteItem">×</button></div>{{/each}}
+      </div>
+      {{/if}}
+      {{#if isCreature}}
+      <div class="spn-panel spn-lore"><h3>DOSSIÊ DE ENTIDADE <span>uso do Narrador</span></h3>
+        <button type="button" class="spn-secondary" data-action="creatureAttack">ATACAR COMO CRIATURA (FOR + COMBATE)</button>
+        <label>Família / espécie <input name="system.creature.family" value="{{a.creature.family}}" /></label>
+        <div class="spn-two"><label>Nível de ameaça <input name="system.creature.threat" type="number" min="1" max="5" value="{{a.creature.threat}}" /></label><label>Proteção <input name="system.creature.armor" type="number" min="0" value="{{a.creature.armor}}" /></label></div>
+        <label>Dano do ataque <input name="system.creature.damage" type="number" min="0" value="{{a.creature.damage}}" /></label>
+        <label class="spn-check"><input type="checkbox" name="system.creature.invulnerable" {{#if a.creature.invulnerable}}checked{{/if}} /> Imune a dano comum até ativar fraqueza</label>
+        <label>Tags de fraqueza (vírgulas) <input name="system.creature.weaknessTags" value="{{a.creature.weaknessTags}}" placeholder="ferro, sal, prata" /></label>
+        <label>Fraqueza e condições <textarea rows="3" name="system.creature.weakness">{{a.creature.weakness}}</textarea></label>
+        <label>Poderes <textarea rows="3" name="system.creature.abilities">{{a.creature.abilities}}</textarea></label>
+        <label>Resistências <textarea rows="3" name="system.creature.defenses">{{a.creature.defenses}}</textarea></label>
+        <label>Como encerrar a ameaça <textarea rows="3" name="system.creature.countermeasure">{{a.creature.countermeasure}}</textarea></label>
+        <label>Segredo para o Narrador <textarea rows="3" name="system.creature.secret">{{a.creature.secret}}</textarea></label>
+      </div>
+      {{/if}}
+    </div>
+  </div>
+  <footer class="spn-bottom">A ESTRADA NÃO TEM FIM <span>— SISTEMA NÃO OFICIAL • REGRAS EM PLAYTEST —</span></footer>
+</section>
