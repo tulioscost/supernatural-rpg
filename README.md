@@ -2,7 +2,7 @@
 
 **Sistema gratuito, independente e não oficial para Foundry VTT 14.** RPG de horror investigativo e caça a criaturas sobrenaturais, inspirado na série *Supernatural*, usando mecânicas adaptadas do manual CLANDESTINO fornecido pelo autor.
 
-> **Versão:** 0.7.0 (protótipo / playtest). Não testado dentro de uma instalação real do Foundry VTT.
+> **Versão:** 0.8.1 (protótipo / playtest). Não testado dentro de uma instalação real do Foundry VTT.
 
 ![Banner do sistema](assets/banner.png)
 
@@ -16,23 +16,23 @@ https://github.com/tulioscost/supernatural-rpg/releases/latest/download/system.j
 
 Selecione **Instalar**, crie um mundo e escolha **Supernatural — Caçadores da Estrada (não oficial)**. Este endereço permanece o mesmo nas próximas atualizações.
 
-**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.7.0.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
+**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.1.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
 
 ## Como publicar a primeira versão no GitHub
 
 1. Envie **todos os arquivos e pastas desta distribuição de código-fonte** para a raiz do repositório `https://github.com/tulioscost/supernatural-rpg` (não envie apenas o arquivo ZIP como conteúdo do repositório).
 2. Certifique-se de que `https://github.com/tulioscost/supernatural-rpg/blob/main/system.json` exista e que **Actions** esteja habilitado.
 3. Crie e envie a tag `v0.5.0`. A ação `.github/workflows/release.yml` valida os arquivos, gera o ZIP e anexa os três arquivos da GitHub Release: manifesto, ZIP e notas da versão.
-4. Verifique em **Releases** se a publicação da versão `v0.7.0` contém `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.7.0.md`.
+4. Verifique em **Releases** se a publicação da versão `v0.8.1` contém `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.1.md`.
 5. Cole a URL de manifesto acima no Foundry VTT. Para versões futuras, atualize a versão/URL de download em `system.json` e crie a tag correspondente.
 
 ### Comandos Git (após colocar os arquivos na raiz do repositório local)
 
 ```bash
 git add .
-git commit -m "feat: publica Supernatural Caçadores da Estrada v0.7.0"
+git commit -m "feat: publica Supernatural Caçadores da Estrada v0.8.1"
 git push origin main
-git tag v0.7.0
+git tag v0.8.1
 git push origin v0.5.0
 ```
 
@@ -138,3 +138,32 @@ game.supernatural.importOneShot();
 - O comando pode ser executado novamente sem criar duplicatas dos documentos identificados.
 - O texto completo também está disponível em [`docs/ONE-SHOT-ULTIMA-CHAMADA.md`](docs/ONE-SHOT-ULTIMA-CHAMADA.md).
 - **Sem mapas prontos nesta edição**: as localizações são descritas em zonas, para teatro da mente.
+
+
+## Retratos dos três caçadores prontos (v0.7.1)
+
+O pacote inclui retratos separados para **Alex Braga**, **Lia Furtado** e **Ravi Moreira**, em `assets/portraits/`. Os três são personagens prontos da biblioteca inicial. Na atualização de mundos anteriores, a imagem de cada um só é preenchida automaticamente quando o retrato ainda utiliza o símbolo genérico original; retratos personalizados são preservados.
+
+Para reaplicar esse preenchimento manualmente como GM: `game.supernatural.updateStarterPortraits();`
+
+
+## v0.8.1 — Cinco PJs completos para 23h17
+
+Cinco novos protagonistas (Noah Brooks, Maya Torres, Mei Nakamura, Samira Haddad e Ethan Walker) foram adicionados ao JSON da one-shot com 9 atributos, 8 pontos de perícia, PV/BPM calculados, talentos iniciais, inventário embutido, histórico, objetivos, vínculos e retratos próprios em `assets/portraits/`. Os cinco NPCs anteriores permanecem inalterados.
+
+Ao abrir o mundo como Narrador, o sistema cria automaticamente o compêndio **Supernatural — One-Shot: 5 PJs Prontos**. Para importá-los para a pasta do mundo, execute:
+
+```js
+game.supernatural.importOneShotPJs();
+```
+
+Depois de importar, abra cada ficha e atribua a permissão **Proprietário** ao respectivo jogador. Os diários individuais de ocultismo são gerados pela automação existente, sem compartilhar segredos da aventura.
+
+
+## v0.8.1 — Tokens isométricos da one-shot
+
+- Miniaturas isométricas individuais de 5 PJs e 6 personagens da aventura, em PNG 512×512 e 256×256, na pasta `assets/tokens/`.
+- Personagens prontos e NPCs incluídos em `data/one-shot-ultima-chamada.json` agora possuem `prototypeToken.texture.src` apontando para seu token. O retrato da ficha (`img`) permanece inalterado.
+- Para sincronizar tokens legados sem substituir arte personalizada, use `game.supernatural.syncOneShotTokens()` como Narrador. Para forçar alteração de tokens personalizados, use explicitamente `game.supernatural.syncOneShotTokens({force:true})`.
+- Cal Mercer possui token próprio no pacote, embora não seja um ator jogável/importado automaticamente por ser personagem falecido.
+- Miniaturas adaptadas de arte gerada para este projeto; os recortes transparentes podem requerer acabamento adicional para uso em mapas muito claros.
