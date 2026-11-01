@@ -9,7 +9,7 @@ export class HunterSheet extends H(ActorSheetV2) {
     classes: ["spn-sheet"], position: {width: 1180,height: 900},
     form: {submitOnChange: true, closeOnSubmit: false},
     actions: {
-      tab: HunterSheet._tab, roll: HunterSheet._roll, customRoll: HunterSheet._customRoll,
+      roll: HunterSheet._roll, customRoll: HunterSheet._customRoll,
       clueRoll: HunterSheet._clueRoll, useItem: HunterSheet._useItem,
       editItem: HunterSheet._editItem, deleteItem: HunterSheet._deleteItem,
       addItem: HunterSheet._addItem, adjustPulse: HunterSheet._adjustPulse,
@@ -33,12 +33,53 @@ export class HunterSheet extends H(ActorSheetV2) {
     return {...ctx,actor,a,attr,skills,itemGroups,archetypes:ARCHETYPES.map(name=>({name,selected:a.identity.archetype===name})),
       difficultyChoices:[1,2,3,4,5].map(n=>({n,selected:a.modifiers.difficulty===n})),
       tabs:[{id:"skills",label:"Perícias"},{id:"inventory",label:"Arsenal"},{id:"lore",label:"Dossiê"},{id:"creature",label:"Bestiário"}]
-        .filter(t=>t.id!=="creature" || actor.type==="creature").map(t=>({...t,active:t.id===this._activeTab})),
+        .filter(t=>t.id!=="creature" || actor.type==="creature").map((t,i)=>({...t,page:String(i+1).padStart(2,"0"),active:t.id===this._activeTab})),
       isSkills:this._activeTab==="skills",isInventory:this._activeTab==="inventory",isLore:this._activeTab==="lore",
       isCreature:this._activeTab==="creature",isMonster:actor.type==="creature",isHunter:actor.type==="hunter",
       totalLoad:actor.items.reduce((sum,i)=>sum + (Number(i.system.load||0)*Number(i.system.quantity||0)),0)};
   }
-  static async _tab(event,el) {this._activeTab=el.dataset.tab;await this.render();}
+  /** Swap diary pages in the existing DOM without triggering form submit or losing edits. */
+  _onRender(context, options) {
+    super._onRender(context, options);
+    const root=this.element;
+    const pages=Array.from(root.querySelectorAll("[data-spn-page]"));
+    const keys=pages.map(page=>page.dataset.spnPage);
+    if(!keys.includes(this._activeTab)) this._activeTab=keys[0] || "skills";
+    const show=(target)=>{
+      if(!keys.includes(target))return;
+      this._activeTab=target;
+      for(const page of pages){
+        const active=page.dataset.spnPage===target;
+        page.hidden=!active;
+        page.classList.toggle("active", active);
+        page.setAttribute("aria-hidden", String(!active));
+      }
+      for(const button of root.querySelectorAll("[data-diary-page]")){
+        const active=button.dataset.diaryPage===target;
+        button.classList.toggle("active", active);
+        button.setAttribute("aria-pressed", String(active));
+      }
+      const index=keys.indexOf(target);
+      const counter=root.querySelector("[data-spn-page-counter]");
+      if(counter)counter.textContent=`Página ${index+1} de ${keys.length}`;
+      const prev=root.querySelector("[data-spn-prev]");
+      const next=root.querySelector("[data-spn-next]");
+      if(prev)prev.disabled=index===0;
+      if(next)next.disabled=index===keys.length-1;
+    };
+    const turn=(event)=>{
+      const button=event.target.closest("[data-diary-page], [data-spn-prev], [data-spn-next]");
+      if(!button || button.disabled)return;
+      event.preventDefault();event.stopPropagation();
+      if(button.dataset.diaryPage)show(button.dataset.diaryPage);
+      else {
+        const idx=keys.indexOf(this._activeTab)+(button.hasAttribute("data-spn-next")?1:-1);
+        if(keys[idx])show(keys[idx]);
+      }
+    };
+    for(const nav of root.querySelectorAll("[data-spn-navigation]"))nav.addEventListener("click",turn);
+    show(this._activeTab);
+  }
   static async _roll(event,el) {
     return rollTest(this.document,{attribute:el.dataset.attr,skill:el.dataset.skill,
       difficulty:this.document.system.modifiers.difficulty,label:`Teste de ${el.dataset.label||"perícia"}`});

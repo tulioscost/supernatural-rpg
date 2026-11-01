@@ -1,3 +1,10 @@
+## v0.3.0
+
+- Corrigida a navegação da ficha: abas são páginas reais do diário, com botões anterior/próximo, contador e alternância sem re-renderização da ficha.
+- Adicionados 47 ícones diferentes e temáticos, associados diretamente aos 47 itens da biblioteca inicial.
+- Adicionado compêndio de itens criado automaticamente no mundo do Foundry quando o Narrador entra, com mecanismo de atualização idempotente e sem duplicações por nome.
+- Itens já importados no mundo que ainda usem o ícone genérico original recebem o ícone correspondente; imagens personalizadas pelo usuário são preservadas.
+
 ## v0.2.0
 
 - Nova ficha em tema de diário de campo/caderno de anotações.

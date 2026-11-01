@@ -28,6 +28,18 @@ def validate():
     assert len(library["actors"]) == 15, "Catálogo de atores diferente do informado"
     assert len(library["items"]) == 47, "Catálogo de itens diferente do informado"
     assert len(library["journals"]) == 4, "Catálogo de dossiês diferente do informado"
+    catalog = json.loads((ROOT / "data/items-compendium.json").read_text(encoding="utf-8"))
+    assert len(catalog) == 47, "Compêndio deve conter 47 itens"
+    assert {i["name"] for i in catalog} == {i["name"] for i in library["items"]}, "Compêndio e kit inicial divergentes"
+    icon_names=set()
+    for item in catalog:
+        src=item.get("img", "")
+        assert src.startswith("systems/supernatural-cacadores/"), f'Ícone inválido: {item["name"]}'
+        relative=src[len("systems/supernatural-cacadores/"):]
+        assert (ROOT / relative).is_file(), f'Ícone não encontrado: {src}'
+        assert src not in icon_names, f'Ícone duplicado: {src}'
+        icon_names.add(src)
+    assert len(icon_names)==47
     return manifest
 
 
@@ -39,7 +51,9 @@ def package():
     all_files = [ROOT / name for name in FILES]
     for folder in FOLDERS:
         assert (ROOT / folder).is_dir(), f"Falta a pasta {folder}"
-        all_files += [p for p in (ROOT / folder).rglob("*") if p.is_file()]
+        all_files += [p for p in (ROOT / folder).rglob("*") if p.is_file()
+                      and not any(part == "fonts" for part in p.relative_to(ROOT).parts)
+                      and p.suffix.lower() not in {".ttf", ".otf", ".woff", ".woff2"}]
     with ZipFile(archive, "w", ZIP_DEFLATED) as z:
         for path in sorted(all_files):
             z.write(path, path.relative_to(ROOT).as_posix())

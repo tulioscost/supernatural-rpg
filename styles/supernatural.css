@@ -1,26 +1,26 @@
 @font-face {
   font-family: "Typernatural";
-  src: url("../assets/fonts/Typernatural-9Vmj.ttf") format("truetype");
+  src: local("typernatural"), local("Typernatural"), url("../assets/fonts/Typernatural-9Vmj.ttf") format("truetype");
 }
 @font-face {
   font-family: "IKnowAGhost";
-  src: url("../assets/fonts/iknowaghost.ttf") format("truetype");
+  src: local("I KNOW A GHOST"), url("../assets/fonts/iknowaghost.ttf") format("truetype");
 }
 @font-face {
   font-family: "GoAroundBooks";
-  src: url("../assets/fonts/Go around the books 2022.ttf") format("truetype");
+  src: local("Go around the books 2022"), url("../assets/fonts/Go around the books 2022.ttf") format("truetype");
 }
 @font-face {
   font-family: "Slender";
-  src: url("../assets/fonts/Slender by Simoncho Design.ttf") format("truetype");
+  src: local("Slender"), url("../assets/fonts/Slender by Simoncho Design.ttf") format("truetype");
 }
 @font-face {
   font-family: "ImWeird";
-  src: url("../assets/fonts/i_mWeird.TTF") format("truetype");
+  src: local("i'mWeird"), url("../assets/fonts/i_mWeird.TTF") format("truetype");
 }
 @font-face {
   font-family: "Kindergarten";
-  src: url("../assets/fonts/kindergarten.ttf") format("truetype");
+  src: local("kindergarten"), url("../assets/fonts/kindergarten.ttf") format("truetype");
 }
 
 :root {
@@ -411,4 +411,58 @@
   .spn-portrait-large { justify-self: start; }
   .spn-status { grid-template-columns: repeat(2, minmax(0,1fr)); }
   .spn-skills, .spn-roller, .spn-two { grid-template-columns: 1fr; }
+}
+
+
+/* v0.3.0: diary page-turning navigation, actual pages rather than re-rendered tabs. */
+.spn-sheet .spn-page-tabs {
+  display:flex; flex-wrap:wrap; gap: 0 7px; padding: 2px 8px 0; margin-bottom: -1px;
+  align-items: end; overflow: visible; position:relative; z-index:2;
+}
+.spn-sheet .spn-page-tab {
+  position:relative; padding:10px 13px 11px; min-width:108px;
+  background: #c5a576 !important; color:#33251d !important;
+  border:1px solid #806045; border-bottom:0; border-radius:9px 9px 0 0;
+  transform:rotate(-1.1deg); box-shadow:2px -2px 4px #4c3c2c22;
+  font-family:"Typernatural",serif; font-size:1.05rem;
+}
+.spn-sheet .spn-page-tab:nth-child(even){transform:rotate(1.2deg); background:#dac8a2!important}
+.spn-sheet .spn-page-tab.active {
+  background: #f8f0dc !important; border-color:#785139; box-shadow:0 -3px 12px #3d281a29;
+  color:#7b2c23!important; z-index:3; transform:none;
+}
+.spn-sheet .spn-page-tab .spn-tab-index {display:inline-block; margin-right:5px; font-size:.72rem; opacity:.7;}
+.spn-sheet .spn-diary-page {
+  position:relative; padding: 22px 20px 25px 40px; min-width:0;
+  min-height:490px; background:linear-gradient(90deg, #f0dfbd 0 18px, #f8f0dc 18px 100%);
+  border:1px solid #785139; box-shadow:8px 8px 0 #ab8861, 12px 12px 18px #3c251e45;
+  margin-bottom:10px;
+  animation: spn-page-flip .16s ease-out;
+}
+.spn-sheet .spn-diary-page::before {
+  content:""; pointer-events:none; position:absolute; left:7px; top:20px; bottom:15px; width:16px;
+  background:radial-gradient(circle, #3e3028 0 4px, #c7b08b 5px, transparent 7px) center 0/16px 40px repeat-y;
+  filter:drop-shadow(1px 1px 1px #231b1490);
+}
+.spn-sheet .spn-diary-page::after {
+  content:""; position:absolute; right:0; top:0; width:0; height:0;
+  border-top:23px solid #ad9069; border-left:23px solid transparent;
+  filter:drop-shadow(-2px 2px 2px #35291a33);pointer-events:none;
+}
+.spn-sheet .spn-diary-page[hidden] {display:none!important;}
+.spn-sheet .spn-page-head {display:flex; justify-content:space-between; flex-wrap:wrap; align-items:center;
+  gap:10px; border-bottom:1px dashed #936f52; padding-bottom:12px; margin-bottom:15px;
+  font-family:"Typernatural",serif; color:#77452a;}
+.spn-sheet .spn-page-head strong {font-family:"IKnowAGhost",fantasy; color:#7c3027; font-size:1.2rem; letter-spacing:.06em;}
+.spn-sheet .spn-page-turner {display:flex; gap:14px; justify-content:center; align-items:center;
+  margin:6px auto 18px; font-family:"Typernatural",serif; color:#5c3822;}
+.spn-sheet .spn-page-turner button {width:36px; height:34px; border-radius:40%; border:1px solid #705239;
+  background:#dfcaa5; color:#583323; font-size:26px; cursor:pointer;}
+.spn-sheet .spn-page-turner button:disabled{opacity:.35;cursor:default;}
+@keyframes spn-page-flip {from{opacity:.75;transform:translateX(7px) rotateY(-5deg)}to{opacity:1;transform:none}}
+@media (max-width:760px) {
+  .spn-sheet .spn-page-tab{min-width:70px; padding:7px 9px; font-size:.84rem;}
+  .spn-sheet .spn-diary-page{padding:24px 9px 22px 24px;}
+  .spn-sheet .spn-diary-page::before{left:1px;}
+  .spn-sheet .spn-page-head strong{font-size:.92rem;}
 }

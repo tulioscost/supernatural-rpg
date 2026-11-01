@@ -58,10 +58,11 @@
     </aside>
 
     <div class="spn-right">
-      <nav class="spn-tabs">
-        {{#each tabs}}<button type="button" data-action="tab" data-tab="{{id}}" class="{{#if active}}active{{/if}}">{{label}}</button>{{/each}}
+      <nav class="spn-tabs spn-page-tabs" data-spn-navigation aria-label="Páginas do diário">
+        {{#each tabs}}<button type="button" data-diary-page="{{id}}" class="spn-page-tab {{#if active}}active{{/if}}" aria-pressed="{{#if active}}true{{else}}false{{/if}}" title="Abrir página {{page}}: {{label}}"><span class="spn-tab-index">{{page}}</span> {{label}}</button>{{/each}}
       </nav>
-      {{#if isSkills}}
+      <section class="spn-diary-page" data-spn-page="skills" aria-label="Página de perícias">
+      <div class="spn-page-head"><span>ANOTAÇÕES DE CAMPO</span><strong>PÁGINA 01 — PERÍCIAS</strong></div>
       <div class="spn-panel"><h3>TESTES DE CAMPO <span>5–6 = sucesso; 6 = ímpeto</span></h3>
         <div class="spn-skills">
           {{#each skills}}
@@ -80,8 +81,9 @@
         </div>
         <button type="button" data-action="clueRoll" class="spn-secondary"><i class="fa-solid fa-magnifying-glass"></i> INVESTIGAR (pista essencial mesmo na falha)</button>
       </div>
-      {{/if}}
-      {{#if isInventory}}
+      </section>
+      <section class="spn-diary-page" data-spn-page="inventory" aria-label="Página do arsenal">
+      <div class="spn-page-head"><span>CATÁLOGO DE EQUIPAMENTO</span><strong>PÁGINA 02 — ARSENAL</strong></div>
       <div class="spn-panel"><h3>ARMAS <button type="button" data-action="addItem" data-type="weapon">+ Nova arma</button></h3>
         {{#each itemGroups.weapon}}<div class="spn-item-row" data-item-id="{{id}}"><img src="{{img}}" alt="" /><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="useItem" title="Atacar">ATACAR</button><button type="button" data-action="editItem" title="Editar">✎</button><button type="button" data-action="deleteItem" title="Excluir">×</button></div>{{else}}<p class="spn-empty">Sem armas. Arraste um item para a ficha ou crie uma.</p>{{/each}}
       </div>
@@ -92,8 +94,9 @@
         {{#each itemGroups.ritual}}<div class="spn-item-row" data-item-id="{{id}}"><img src="{{img}}" alt="" /><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="useItem">EXECUTAR</button><button type="button" data-action="editItem">✎</button><button type="button" data-action="deleteItem">×</button></div>{{else}}<p class="spn-empty">Nenhum ritual preparado.</p>{{/each}}
       </div>
       <p class="spn-footer">Carga transportada: {{totalLoad}} · Componentes e munições são consumidos por ações próprias.</p>
-      {{/if}}
-      {{#if isLore}}
+      </section>
+      <section class="spn-diary-page" data-spn-page="lore" aria-label="Página do dossiê">
+      <div class="spn-page-head"><span>ARQUIVO RESERVADO</span><strong>PÁGINA 03 — DOSSIÊ</strong></div>
       <div class="spn-panel spn-lore"><h3>HISTÓRICO E VÍNCULOS</h3>
         <label>Origem / passado <textarea name="system.identity.background" rows="4">{{a.identity.background}}</textarea></label>
         <label>Pessoas importantes <textarea name="system.identity.bonds" rows="3">{{a.identity.bonds}}</textarea></label>
@@ -106,8 +109,10 @@
       <div class="spn-panel"><h3>PISTAS <button type="button" data-action="addItem" data-type="clue">+ Pista</button></h3>
       {{#each itemGroups.clue}}<div class="spn-item-row" data-item-id="{{id}}"><div><b>{{name}}</b><small>{{detail}}</small></div><button type="button" data-action="editItem">✎</button><button type="button" data-action="deleteItem">×</button></div>{{/each}}
       </div>
-      {{/if}}
-      {{#if isCreature}}
+      </section>
+      {{#if isMonster}}
+      <section class="spn-diary-page" data-spn-page="creature" aria-label="Página do bestiário">
+      <div class="spn-page-head"><span>CONFIDENCIAL / SOMENTE NARRADOR</span><strong>PÁGINA 04 — BESTIÁRIO</strong></div>
       <div class="spn-panel spn-lore"><h3>DOSSIÊ DE ENTIDADE <span>uso do Narrador</span></h3>
         <button type="button" class="spn-secondary" data-action="creatureAttack">ATACAR COMO CRIATURA (FOR + COMBATE)</button>
         <label>Família / espécie <input name="system.creature.family" value="{{a.creature.family}}" /></label>
@@ -121,7 +126,13 @@
         <label>Como encerrar a ameaça <textarea rows="3" name="system.creature.countermeasure">{{a.creature.countermeasure}}</textarea></label>
         <label>Segredo para o Narrador <textarea rows="3" name="system.creature.secret">{{a.creature.secret}}</textarea></label>
       </div>
+      </section>
       {{/if}}
+      <div class="spn-page-turner" data-spn-navigation aria-label="Folhear diário">
+        <button type="button" data-spn-prev title="Página anterior" aria-label="Página anterior">‹</button>
+        <span class="spn-page-count" data-spn-page-counter>Página 1 de {{tabs.length}}</span>
+        <button type="button" data-spn-next title="Próxima página" aria-label="Próxima página">›</button>
+      </div>
     </div>
   </div>
   <footer class="spn-bottom">A ESTRADA NÃO TEM FIM <span>— CADERNO NÃO OFICIAL • REGRAS EM PLAYTEST —</span></footer>

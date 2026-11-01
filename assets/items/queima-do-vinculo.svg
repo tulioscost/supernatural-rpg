@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+<defs><linearGradient id="paper" x2="1" y2="1"><stop stop-color="#e7d6b4"/><stop offset="1" stop-color="#bb9b6f"/></linearGradient><linearGradient id="ink"><stop stop-color="#6c3529"/><stop offset="1" stop-color="#3d251a"/></linearGradient></defs>
+<rect x="3" y="3" width="250" height="250" rx="12" fill="#422c21" stroke="#2b211a" stroke-width="5"/>
+<path d="M13 16 L241 10 L245 238 L14 245 Z" fill="url(#paper)" stroke="#7a563b" stroke-width="3"/>
+<path d="M26 34 L229 31 M26 217 L229 213" stroke="#6d4631" stroke-width="2" opacity=".4"/>
+<circle cx="149" cy="127" r="1" fill="#8b5b3c" opacity=".18" /><circle cx="190" cy="150" r="2" fill="#8b5b3c" opacity=".18" /><circle cx="231" cy="173" r="3" fill="#8b5b3c" opacity=".18" /><circle cx="48" cy="196" r="1" fill="#8b5b3c" opacity=".18" /><circle cx="89" cy="219" r="2" fill="#8b5b3c" opacity=".18" /><circle cx="130" cy="32" r="3" fill="#8b5b3c" opacity=".18" /><circle cx="171" cy="55" r="1" fill="#8b5b3c" opacity=".18" /><circle cx="212" cy="78" r="2" fill="#8b5b3c" opacity=".18" /><circle cx="29" cy="101" r="3" fill="#8b5b3c" opacity=".18" /><circle cx="70" cy="124" r="1" fill="#8b5b3c" opacity=".18" /><circle cx="111" cy="147" r="2" fill="#8b5b3c" opacity=".18" /><circle cx="152" cy="170" r="3" fill="#8b5b3c" opacity=".18" /><circle cx="193" cy="193" r="1" fill="#8b5b3c" opacity=".18" /><circle cx="234" cy="216" r="2" fill="#8b5b3c" opacity=".18" />
+<g transform="translate(48,45)"><path d="M76 20 Q105 57 80 68 Q110 76 114 107 Q113 137 81 142 Q40 140 43 106 Q47 84 68 65 Q51 92 77 100 Q78 74 76 20" stroke="#8c4027" stroke-width="7" fill="#d07937" stroke-linecap="round" stroke-linejoin="round" /><path d="M81 82 Q95 120 81 133 Q64 123 81 82" stroke="#9d6b3d" stroke-width="7" fill="#e7ba64" stroke-linecap="round" stroke-linejoin="round" /></g>
+<path d="M20 215 L237 215" stroke="#7d352b" stroke-width="3" opacity=".75"/>
+<text x="128" y="231" text-anchor="middle" font-size="14" font-weight="bold" font-family="DejaVu Sans,Arial,sans-serif" fill="#562d25" letter-spacing="1.4">RITUAL</text>
+</svg>
