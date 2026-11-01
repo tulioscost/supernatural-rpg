@@ -2,7 +2,7 @@
 
 **Sistema gratuito, independente e não oficial para Foundry VTT 14.** RPG de horror investigativo e caça a criaturas sobrenaturais, inspirado na série *Supernatural*, usando mecânicas adaptadas do manual CLANDESTINO fornecido pelo autor.
 
-> **Versão:** 0.8.3 (protótipo / playtest). Não testado dentro de uma instalação real do Foundry VTT.
+> **Versão:** 0.8.4 (protótipo / playtest). Não testado dentro de uma instalação real do Foundry VTT.
 
 ![Banner do sistema](assets/banner.png)
 
@@ -16,7 +16,7 @@ https://github.com/tulioscost/supernatural-rpg/releases/latest/download/system.j
 
 Selecione **Instalar**, crie um mundo e escolha **Supernatural — Caçadores da Estrada (não oficial)**. Este endereço permanece o mesmo nas próximas atualizações.
 
-**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.3.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
+**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.4.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
 
 ## Publicação automática pelo GitHub Actions
 
@@ -24,8 +24,8 @@ O arquivo `.github/workflows/release.yml` cria a Release automaticamente a cada 
 
 1. Envie **todo o conteúdo deste projeto** para a raiz do repositório `tulioscost/supernatural-rpg`, incluindo a pasta oculta `.github/workflows/`.
 2. O GitHub inicia **Actions → Publicar automaticamente no Foundry** assim que ocorrer um `push` para `main`.
-3. A Action valida o motor, as imagens, o manifesto e os três arquivos da Release. Se a versão do manifesto ainda não existir, publica a tag e a Release `v0.8.3` automaticamente.
-4. Acesse **Releases** e encontre os três arquivos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.3.md`.
+3. A Action valida o motor, as imagens, o manifesto e os três arquivos da Release. Se a versão do manifesto ainda não existir, publica a tag e a Release `v0.8.4` automaticamente.
+4. Acesse **Releases** e encontre os três arquivos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.4.md`.
 5. Se a Release estiver indisponível, baixe o pacote de testes na aba **Actions → último run → Artifacts**.
 
 Para uma atualização futura, altere **`version` e `download` em `system.json`** para `0.8.4` (ou outra versão ainda não lançada), atualize os arquivos e envie outro `push` para `main`. Não é necessário criar tags manualmente.
@@ -36,7 +36,7 @@ Para uma atualização futura, altere **`version` e `download` em `system.json`*
 
 ```bash
 git add .
-git commit -m "Release automática Supernatural v0.8.3"
+git commit -m "Release automática Supernatural v0.8.4"
 git push origin main
 ```
 
@@ -179,9 +179,34 @@ Depois de importar, abra cada ficha e atribua a permissão **Proprietário** ao 
 - Atualizar personagens já importados: `game.supernatural.syncOneShotTokens()`.
 
 
-## v0.8.3 — Download e publicação sem tags manuais
+## v0.8.4 — Download e publicação sem tags manuais
 
 - O projeto inclui workflow que gera e publica automaticamente a Release no GitHub ao enviar nova versão à `main`.
 - Os três assets também são disponibilizados em um artifact na aba Actions.
 - O manifesto conserva o endereço estável para atualização no Foundry.
 - Caso o workflow não rode, confirme que Actions está habilitado no repositório e que o token tem permissão efetiva para criar releases (`contents: write`).
+
+
+## v0.8.4 — Macro para forçar imagens e tokens
+
+O sistema agora cria automaticamente no mundo do Narrador uma Macro do tipo Script:
+**Supernatural — Forçar retratos e tokens**. Ela também está disponível como
+`macros/forcar-atualizacao-imagens.js` para execução manual.
+
+Ao executar, confirme a substituição das imagens. A macro:
+
+- força o retrato (`img`) de personagens conhecidos no diretório de Atores;
+- força o token padrão (`prototypeToken.texture.src`) e normaliza a escala visual;
+- atualiza os tokens já colocados **em todas as cenas** (inclusive não ativas);
+- atualiza os dois compêndios de atores da one-shot, relacrando-os ao terminar;
+- verifica arquivos de imagem para não gravar referências ausentes;
+- registra no console (F12) o resultado e as eventuais falhas.
+
+**Importante:** a macro substitui imagens personalizadas. Faça backup do mundo
+antes de executá-la. Ela não muda atributos, equipamentos, PV, posição ou dimensão
+tática dos tokens. A seleção cobre os personagens nomeados da aventura e os três
+caçadores iniciais; outros personagens permanecem intocados. O sistema deve estar
+atualizado antes de executar a macro.
+
+Para simular sem alterar os documentos, modifique `dryRun: false` para `dryRun: true`
+na macro e execute novamente. A macro não precisa ser executada após cada carregamento.
