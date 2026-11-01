@@ -2,7 +2,9 @@
 
 **Sistema gratuito, independente e não oficial para Foundry VTT 14.** RPG de horror investigativo e caça a criaturas sobrenaturais, inspirado na série *Supernatural*, usando mecânicas adaptadas do manual CLANDESTINO fornecido pelo autor.
 
-> **Versão:** 0.4.0 (protótipo / playtest). Não testado dentro de uma instalação real do Foundry VTT.
+> **Versão:** 0.7.0 (protótipo / playtest). Não testado dentro de uma instalação real do Foundry VTT.
+
+![Banner do sistema](assets/banner.png)
 
 ## Instalação diretamente pelo GitHub
 
@@ -14,23 +16,23 @@ https://github.com/tulioscost/supernatural-rpg/releases/latest/download/system.j
 
 Selecione **Instalar**, crie um mundo e escolha **Supernatural — Caçadores da Estrada (não oficial)**. Este endereço permanece o mesmo nas próximas atualizações.
 
-**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.5.0.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
+**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.7.0.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
 
 ## Como publicar a primeira versão no GitHub
 
 1. Envie **todos os arquivos e pastas desta distribuição de código-fonte** para a raiz do repositório `https://github.com/tulioscost/supernatural-rpg` (não envie apenas o arquivo ZIP como conteúdo do repositório).
 2. Certifique-se de que `https://github.com/tulioscost/supernatural-rpg/blob/main/system.json` exista e que **Actions** esteja habilitado.
 3. Crie e envie a tag `v0.5.0`. A ação `.github/workflows/release.yml` valida os arquivos, gera o ZIP e anexa os três arquivos da GitHub Release: manifesto, ZIP e notas da versão.
-4. Verifique em **Releases** se a publicação da versão `v0.5.0` contém `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.5.0.md`.
+4. Verifique em **Releases** se a publicação da versão `v0.7.0` contém `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.7.0.md`.
 5. Cole a URL de manifesto acima no Foundry VTT. Para versões futuras, atualize a versão/URL de download em `system.json` e crie a tag correspondente.
 
 ### Comandos Git (após colocar os arquivos na raiz do repositório local)
 
 ```bash
 git add .
-git commit -m "feat: publica Supernatural Caçadores da Estrada v0.5.0"
+git commit -m "feat: publica Supernatural Caçadores da Estrada v0.7.0"
 git push origin main
-git tag v0.5.0
+git tag v0.7.0
 git push origin v0.5.0
 ```
 
@@ -108,3 +110,31 @@ game.supernatural.ensureOccultCompendiums();
 - O Dice So Nice registra o conjunto **Supernatural — Diário do Caçador** com seis imagens 256×256 e um papel de dado próprio. Testes da ficha aplicam explicitamente essa aparência.
 - Para usar o mesmo dado ao rolar pelo Dice Tray, selecione **Supernatural — Diário do Caçador** como conjunto de dados d6 nas preferências do Dice So Nice. O sistema não altera compulsoriamente as preferências de outros sistemas/usuários.
 - Resultado mecânico do d6 permanece 1–6; 5–6 são sucessos, e 6 também gera Ímpeto.
+
+
+## v0.6.0 — banner, contraste e Livro Base
+
+- O banner gerado para o sistema agora faz parte dos assets em `assets/banner.png` e pode ser usado no GitHub, handouts e páginas de apresentação.
+- Os journals receberam contraste reforçado: texto mais escuro, linhas mais nítidas, cabeçalhos mais visíveis e tabelas mais legíveis.
+- Um novo compêndio de mundo é criado para o Narrador: **Supernatural — Livro Base**, contendo o texto-base do sistema em páginas de journal estilizadas.
+- Ferramenta de console adicional: `game.supernatural.ensureBaseBookCompendium();`
+
+
+## One-shot inclusa — 23h17: A Última Chamada (v0.7.0)
+
+- **Três novos compêndios de mundo**, criados automaticamente quando o Narrador entra:
+  1. Supernatural — One-Shot: 23h17 (Narrador), com 16 páginas.
+  2. Supernatural — One-Shot: Personagens e Ameaça, com cinco NPCs/fichas.
+  3. Supernatural — One-Shot: Pistas e Ritual, com seis itens.
+- Aventura planejada para **3–5 jogadores, 3–4 horas**, investigação não linear, ameaça sobrenatural e três desfechos.
+- O livro é **reservado ao Narrador**, pois contém a solução. Não conceda permissão de leitura a jogadores.
+- Para copiar NPCs, itens e cinco handouts para as pastas do mundo, execute como Narrador no console do navegador:
+
+```js
+game.supernatural.importOneShot();
+```
+
+- Após a importação, **revele os handouts individualmente** quando os jogadores descobrirem cada pista; todos começam sem acesso de jogador.
+- O comando pode ser executado novamente sem criar duplicatas dos documentos identificados.
+- O texto completo também está disponível em [`docs/ONE-SHOT-ULTIMA-CHAMADA.md`](docs/ONE-SHOT-ULTIMA-CHAMADA.md).
+- **Sem mapas prontos nesta edição**: as localizações são descritas em zonas, para teatro da mente.
