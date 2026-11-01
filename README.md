@@ -16,7 +16,7 @@ https://github.com/tulioscost/supernatural-rpg/releases/latest/download/system.j
 
 Selecione **Instalar**, crie um mundo e escolha **Supernatural — Caçadores da Estrada (não oficial)**. Este endereço permanece o mesmo nas próximas atualizações.
 
-**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.7.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
+**Atenção:** o manifesto acima só funcionará após a publicação da **primeira Release** do repositório contendo os três anexos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.8.md`. Somente enviar os fontes à branch `main` não disponibiliza o sistema para instalação.
 
 ## Publicação automática pelo GitHub Actions
 
@@ -24,8 +24,8 @@ O arquivo `.github/workflows/release.yml` cria a Release automaticamente a cada 
 
 1. Envie **todo o conteúdo deste projeto** para a raiz do repositório `tulioscost/supernatural-rpg`, incluindo a pasta oculta `.github/workflows/`.
 2. O GitHub inicia **Actions → Publicar automaticamente no Foundry** assim que ocorrer um `push` para `main`.
-3. A Action valida o motor, as imagens, o manifesto e os três arquivos da Release. Se a versão do manifesto ainda não existir, publica a tag e a Release `v0.8.7` automaticamente.
-4. Acesse **Releases** e encontre os três arquivos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.7.md`.
+3. A Action valida o motor, as imagens, o manifesto e os três arquivos da Release. Se a versão do manifesto ainda não existir, publica a tag e a Release `v0.8.8` automaticamente.
+4. Acesse **Releases** e encontre os três arquivos: `system.json`, `supernatural-cacadores.zip` e `release-notes-v0.8.8.md`.
 5. Se a Release estiver indisponível, baixe o pacote de testes na aba **Actions → último run → Artifacts**.
 
 Para uma atualização futura, altere **`version` e `download` em `system.json`** para `0.8.7` (ou outra versão ainda não lançada), atualize os arquivos e envie outro `push` para `main`. Não é necessário criar tags manualmente.
@@ -36,7 +36,7 @@ Para uma atualização futura, altere **`version` e `download` em `system.json`*
 
 ```bash
 git add .
-git commit -m "Release automática Supernatural v0.8.7"
+git commit -m "Release automática Supernatural v0.8.8"
 git push origin main
 ```
 
@@ -179,7 +179,7 @@ Depois de importar, abra cada ficha e atribua a permissão **Proprietário** ao 
 - Atualizar personagens já importados: `game.supernatural.syncOneShotTokens()`.
 
 
-## v0.8.7 — Download e publicação sem tags manuais
+## v0.8.8 — Download e publicação sem tags manuais
 
 - O projeto inclui workflow que gera e publica automaticamente a Release no GitHub ao enviar nova versão à `main`.
 - Os três assets também são disponibilizados em um artifact na aba Actions.
@@ -187,7 +187,7 @@ Depois de importar, abra cada ficha e atribua a permissão **Proprietário** ao 
 - Caso o workflow não rode, confirme que Actions está habilitado no repositório e que o token tem permissão efetiva para criar releases (`contents: write`).
 
 
-## v0.8.7 — Macro para forçar imagens e tokens
+## v0.8.8 — Macro para forçar imagens e tokens
 
 O sistema agora cria automaticamente no mundo do Narrador uma Macro do tipo Script:
 **Supernatural — Forçar retratos e tokens**. Ela também está disponível como
@@ -212,7 +212,7 @@ Para simular sem alterar os documentos, modifique `dryRun: false` para `dryRun: 
 na macro e execute novamente. A macro não precisa ser executada após cada carregamento.
 
 
-## v0.8.7 — Cenas automáticas com Level nativo no Foundry V14
+## v0.8.8 — Cenas automáticas com Level nativo no Foundry V14
 
 - Quatro mapas da one-shot incluídos em `assets/maps/` (WebP de alta qualidade e miniaturas).
 - Ao entrar como Narrador, o sistema cria automaticamente quatro cenas em ordem, com um documento `Level` cada e `Level.background.src` apontando para a imagem.
@@ -223,13 +223,23 @@ na macro e execute novamente. A macro não precisa ser executada após cada carr
 - **Atenção:** as imagens são ilustrativas sem grade; por isso, as cenas foram configuradas como `gridless`. Para os jogadores enxergarem, é necessário colocar tokens com visão habilitada. Não foram criadas paredes automáticas porque estes mapas não permitem delimitação confiável de obstáculos.
 
 
-## v0.8.7 — Dois tokens isométricos corrigidos
+## v0.8.8 — Dois tokens isométricos corrigidos
 
 - Novas miniaturas isométricas completas para Ethan Walker e Noah Brooks, base circular e fundo transparente.
 - Novos caminhos `assets/tokens/*-isometrico-v086-512.png` evitam uso de imagens antigas no cache.
 - Execute a macro **Supernatural — Forçar retratos e tokens** para corrigir os tokens já colocados nas cenas; ela também atualiza as imagens padrão das fichas.
 
 
-## v0.8.7 — Tela de pausa de investigação
+## v0.8.8 — Tela de pausa de investigação
 
 O indicador nativo de pausa do Foundry VTT 14 exibe a armadilha do diabo em lugar do relógio e o texto **INVESTIGAÇÃO PARADA**. A rotação original e a sincronização de pausa entre jogadores permanecem sob controle do Foundry. A imagem está em `assets/pause/armadilha-do-diabo.webp` e o código em `module/pause.mjs`.
+
+
+## Correção de retratos e tokens dos PJs (v0.8.8)
+
+- Cinco retratos individuais novos de 1024 px.
+- Tokens distintos para Mei Nakamura e Samira Haddad, sem reaproveitamento entre personagens.
+- **Atualização no próprio compêndio** `world.cacadores-ultima-chamada-pjs`: na primeira entrada como Narrador, o sistema atualiza o campo `img` e `prototypeToken.texture.src` de todas as cinco fichas já cadastradas.
+- Fichas importadas ao mundo e tokens de cenas são atualizados se ainda usarem imagens distribuídas pelo sistema. Não sobrescreve imagens personalizadas automaticamente.
+- Para sobrescrever tudo (inclusive personalizações), execute a macro **Supernatural — Corrigir artes dos 5 PJs no compêndio** ou `await game.supernatural.repairOneShotArtwork({forceWorld:true,updateScenes:true})`.
+- Depois da execução, feche e abra novamente o compêndio para atualizar as miniaturas do painel.
