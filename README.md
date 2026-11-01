@@ -245,7 +245,7 @@ O indicador nativo de pausa do Foundry VTT 14 exibe a armadilha do diabo em luga
 - Depois da execução, feche e abra novamente o compêndio para atualizar as miniaturas do painel.
 
 
-## v0.8.9 — Paredes nativas e edição manual (Foundry V14)
+## v0.9.0 — Paredes nativas e edição manual (Foundry V14)
 
 - A primeira entrada do Narrador configura **55 segmentos aproximados** nas quatro cenas da one-shot: paredes normais, portas e obstáculos de terreno. As paredes são documentos **Scene.Wall**, associados ao nível correto pelo campo `Wall.levels: [idDoLevel]` — não são criadas em `Level.walls`.
 - A geometria é uma **proposta tática aproximada** para mapas ilustrativos, não uma transcrição perfeita da arquitetura. Revise as posições das portas, estantes e rochas antes da sessão.
