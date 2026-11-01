@@ -1,0 +1,5 @@
+# Saída local e caches; o ZIP para Foundry é publicado automaticamente nos Releases.
+dist/
+node_modules/
+__pycache__/
+.DS_Store
