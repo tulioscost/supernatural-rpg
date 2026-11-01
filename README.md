@@ -243,3 +243,24 @@ O indicador nativo de pausa do Foundry VTT 14 exibe a armadilha do diabo em luga
 - Fichas importadas ao mundo e tokens de cenas são atualizados se ainda usarem imagens distribuídas pelo sistema. Não sobrescreve imagens personalizadas automaticamente.
 - Para sobrescrever tudo (inclusive personalizações), execute a macro **Supernatural — Corrigir artes dos 5 PJs no compêndio** ou `await game.supernatural.repairOneShotArtwork({forceWorld:true,updateScenes:true})`.
 - Depois da execução, feche e abra novamente o compêndio para atualizar as miniaturas do painel.
+
+
+## v0.8.9 — Paredes nativas e edição manual (Foundry V14)
+
+- A primeira entrada do Narrador configura **55 segmentos aproximados** nas quatro cenas da one-shot: paredes normais, portas e obstáculos de terreno. As paredes são documentos **Scene.Wall**, associados ao nível correto pelo campo `Wall.levels: [idDoLevel]` — não são criadas em `Level.walls`.
+- A geometria é uma **proposta tática aproximada** para mapas ilustrativos, não uma transcrição perfeita da arquitetura. Revise as posições das portas, estantes e rochas antes da sessão.
+- O sistema usa `Scene.createEmbeddedDocuments('Wall', ...)` só **depois** de a cena e o nível existirem, para evitar a inconsistência conhecida em importações iniciais de paredes no V14.
+- A atualização preserva paredes manuais, tokens, áreas exploradas de FOG e alterações anteriores de posição feitas pelo Narrador. Paredes antigas do próprio sistema, sem vínculo correto com o Level, recebem somente o reparo desse vínculo.
+- Foi acrescentada a macro **Supernatural — Criar paredes e habilitar edição (V14)**, que abre a cena no Level correto e ativa a camada de paredes sem alterar os controles nativos.
+- Para criar paredes: abra a cena como Narrador, execute a macro e escolha *Abrir ferramenta de paredes*; na paleta de Paredes clique em **Desenhar Parede**, segure o botão esquerdo e arraste entre os dois pontos. Verifique se o piso correto está selecionado no navegador de níveis do V14.
+
+**Funções disponíveis (console do Narrador):**
+
+```js
+await game.supernatural.ensureAdventureWalls();
+await game.supernatural.enableManualWalls();
+// Validação sem criar paredes:
+await game.supernatural.ensureAdventureWalls({dryRun:true});
+```
+
+**Limitações importantes:** o sistema não pode conceder permissões de Narrador, corrigir conflitos externos de módulos ou garantir o estado do Canvas de uma instalação que não tenha sido testada. A macro restaura o nível selecionado e abre a camada oficial, mas se a criação manual continuar bloqueada, verifique o console F12, permissões, versão do Foundry e módulos ativos.
